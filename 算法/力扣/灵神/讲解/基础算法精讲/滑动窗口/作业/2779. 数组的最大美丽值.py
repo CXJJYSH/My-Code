@@ -1,5 +1,5 @@
 class Solution:
-    def maximumBeauty(self, nums: List[int], k: int) -> int:
+    def maximumBeauty(self, nums: list[int], k: int) -> int:
         
         # “由于选的是子序列，且操作后子序列的元素都相等，所以元素顺序对答案没有影响，可以先对数组排序。”我现在还不理解为什么可以排序、以及排序后用滑动窗口找出来的数组就刚好全是符合要求的、且没有任何遗漏。
         
