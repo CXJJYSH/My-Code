@@ -66,4 +66,4 @@ class Solution:
                 ans = max(ans, right - left + 1)
         return -1 if ans < 0 else len(nums) - ans
 
-# 2025.10.29 16:21 用时00:47:51
+# 2025.10.29 16:21 用时00:47:51 
