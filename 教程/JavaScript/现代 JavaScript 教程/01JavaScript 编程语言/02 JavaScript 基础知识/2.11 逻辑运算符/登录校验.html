@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<!--第一段是我自己写的代码，唯一有问题的地方是输入password的时候如果按esc会提示Wrong password。-->
+
+<!--
+<html>
+    <script>
+        let name = prompt("Who's there?");
+        if (name === "" || name === null) {
+            alert("Canceled");
+        } else if (name !=="Admin") {
+            alert("I don't know you");
+        } else {
+            let password = prompt("Password?");
+            if (password === "" || name === null) {
+                alert("Canceled");
+            } else if (password !== "TheMaster") {
+                alert("Wrong password");
+            } else {
+                alert("Welcome!");
+            }
+        }
+    </script>
+</html>
+-->
+
+<!--第二段是教程给出的标准代码，我自己复刻了一遍罢了。-->
+<!--教程代码和我不同的地方在于它每个判断相等的地方都使用了严格相等判定、以及给prompt设置了默认值。我检查的时候改过来了。-->
+
+<html>
+    <script>
+        let name = prompt("Who's there?", '');
+        if (name === "Admin") {
+            let password = prompt("Password?", '');
+            if (password === "TheMaster") {
+                alert("Welcome!");
+            } else if (password === "" || password === null) {
+                alert("Canceled");
+            } else {
+                alert("Wrong password");
+            }
+        } else if (name === "" || name === null) {
+            alert("Canceled");
+        } else {
+            alert("I don't know you");
+        }
+    </script>
+</html>
