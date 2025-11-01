@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<html>
+    <script>
+        let n = 10;
+        nextprime:
+        for (i = 2; i <= n; i++) {
+            for (j = 2; j < i; j++) {
+                if (i % j == 0) continue nextprime;
+            }
+            alert(i);
+        }
+    </script>
+</html>
