@@ -40,6 +40,7 @@ class Solution:
         return left
 
 # 牛逼，自己写一遍都过了。
+
 # 噢，我知道了————
 # 要使区间不为空，
 # 左开右开就要left + 1 < right;
