@@ -1,5 +1,7 @@
 class Solution:
     def findPeakElement(self, nums: list[int]) -> int:
+
+        # 遍历第一个元素到倒数第二个元素。 
         
         # 这是左开右开区间写法。
         
