@@ -43,3 +43,4 @@ class Solution:
 # 左开右开就要left + 1 < right;
 # 左闭右开就要left < right;
 # 左闭右闭就要left <= right,也是left < right + 1。 
+# 且和其它条件无关。 
