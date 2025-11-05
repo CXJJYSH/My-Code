@@ -204,4 +204,4 @@ class Solution:
         return right if nums[right] == target else -1
     
 # 这又是灵神的没用新函数的一次二分的写法一。
-# 2025.11.05 17:27
+# 2025.11.05 17:27 
