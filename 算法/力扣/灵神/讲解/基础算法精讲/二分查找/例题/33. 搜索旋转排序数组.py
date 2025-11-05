@@ -86,8 +86,8 @@ class Solution:
                     left = mid + 1
                 else:
                     right = mid - 1
-            if left == len(nums) or nums[left] != target:
-                return -1
+            if left == len(nums) or nums[left] != target: # 灵神那里用的是开区间，开区间初始状态right就等于len(nums)，所以最后检查的时候是检查right是否等于len(nums)，即检查右指针有没有移动过。
+                return -1                                 # 而我这里用的闭区间，却还是检查right是否等于len(nums)，错误应该就出在这里。我应该检查右指针有没有移动过，即right是否等于len(nums) - 1。
             return left
         
 # 上面又是我第二天写的没过代码，关键是我现在还不知道我的代码哪里出了问题。 
@@ -160,3 +160,48 @@ class Solution:
 # 上面这段是灵神的题解原代码。
 # 2025.11.04 17:03 
 # 一次二分的写法就明天再来看吧，今天光写好两次二分的代码就花费了两个小时了。 
+
+class Solution:
+    def search(self, nums: list[int], target: int) -> int:
+        def is_blue(i: int) -> bool:
+            end = nums[-1]
+            if nums[i] > end:
+                return target > end and nums[i] >= target 
+            else:
+                return target > end or nums[i] >= target 
+        left = -1
+        right = len(nums)
+        while left + 1 < right:
+            mid = (left + right) // 2
+            if is_blue(mid):
+                right = mid
+            else:
+                left = mid
+        if right == len(nums) or nums[right] != target:
+            return -1
+        return right 
+    
+# 这是灵神的一次二分的写法，我今天看一遍看懂了之后复刻了一遍。
+# 2025.11.05 16:30 
+# 这个就是灵神一次二分的写法二，用了一个新函数。
+# 2025.11.05 17:31
+
+class Solution:
+    def search(self, nums: list[int], target: int) -> int:
+        left = -1
+        right = len(nums) - 1 # 这里赋len(nums)或len(nums) - 1都行。
+        while left + 1 < right:
+            mid = (left + right) // 2
+            x = nums[mid]
+            if target > nums[-1] >= x:
+                right = mid
+            elif x > nums[-1] >= target:
+                left = mid
+            elif x >= target:
+                right = mid
+            else:
+                left = mid
+        return right if nums[right] == target else -1
+    
+# 这又是灵神的没用新函数的一次二分的写法一。
+# 2025.11.05 17:27
