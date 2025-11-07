@@ -37,3 +37,5 @@ class Solution:
         success -= 1
         return [m - bisect_right(potions, success // x) for x in spells]
     
+# 还有方法二 计数 + 值域前缀和 写法，但是今天先不看这部分题解，等我把前缀和那道题做完之后再来写方法二的代码。
+# 2025.11.07 13:14
