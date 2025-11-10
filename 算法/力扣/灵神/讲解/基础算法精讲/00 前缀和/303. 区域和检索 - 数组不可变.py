@@ -13,3 +13,6 @@ class NumArray:
 # Your NumArray object will be instantiated and called as such:
 # obj = NumArray(nums)
 # param_1 = obj.sumRange(left,right)
+
+# 前缀和方法教学
+# 2025.11.10 12:27
