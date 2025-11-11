@@ -49,7 +49,7 @@ class Solution:
         # 当“递”的过程结束之后、“归”的过程归到头节点时，函数执行完成后返回的结果就是整个链表反转后的头节点，所以可以直接返回rev_head。
 
 # 然后是头插法，用 迭代 实现。
-# OK，不错，头插法一下就解决了。
+# OK，不错，用头插法一下就解决了。
 
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
