@@ -52,7 +52,7 @@ class Solution:
 # OK，不错，用头插法一下就解决了。
 
 class Solution:
-    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]: # type: ignore
         pre = None
         cur = head
         while cur:
