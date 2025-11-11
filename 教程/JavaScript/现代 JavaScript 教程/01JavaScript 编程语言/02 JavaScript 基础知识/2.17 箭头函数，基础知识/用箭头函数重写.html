@@ -1,0 +1,49 @@
+<!--
+
+这一段是错的，在浏览器上不会如期运行。
+
+<!DOCTYPE html>
+<script>
+    let yes = () => { alert("You agreed.") };
+    let no = () => { alert("You canceled the execution.") };
+    let ask = (question, yes, no) => {
+        if (confirm(question)) yes();
+        else no();
+    };
+</script>
+
+-->
+
+<!--下面这一段是需要改写的代码。看了解答之后知道其实只用改第二段就可以了😂。-->
+
+<!--
+
+function ask(question, yes, no) {
+if (confirm(question)) yes();
+else no();
+}
+
+ask(
+"Do you agree?",
+function() { alert("You agreed."); },
+function() { alert("You canceled the execution."); }
+);
+
+-->
+
+<!DOCTYPE html>
+
+<script>
+
+    function ask(question, yes, no) {
+        if (confirm(question)) yes();
+        else no();
+    }
+
+    ask(
+        "Do you agree?",
+        () => alert("You agreed."),
+        () => alert("You canceled the execution.")
+    );
+
+</script>
