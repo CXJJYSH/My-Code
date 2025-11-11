@@ -1,3 +1,5 @@
+# 首先是 尾插法，用 递归 实现。
+
 from typing import Optional
 
 # 下面是灵神的题解代码和注释。
@@ -45,3 +47,18 @@ class Solution:
         return rev_head
         # 以上的流程覆盖到全体节点就是 从后往前逐步建立链表节点链，每次递归只是建立 当前节点 和 下一节点 之间的指向关系。
         # 当“递”的过程结束之后、“归”的过程归到头节点时，函数执行完成后返回的结果就是整个链表反转后的头节点，所以可以直接返回rev_head。
+
+# 然后是头插法，用 迭代 实现。
+# OK，不错，头插法一下就解决了。
+
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        pre = None
+        cur = head
+        while cur:
+            nxt = cur.next 
+            cur.next = pre 
+            pre = cur
+            cur = nxt 
+        # 不断更新两个指针，要保证更新顺序没有错误。
+        return pre
