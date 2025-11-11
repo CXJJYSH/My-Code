@@ -60,3 +60,5 @@ class Solution:
             spells[i] = cnt[low] if low <= mx else 0 
         # 这里是查找满足条件的最小元素是否在potions里，如果在(low <= mx)则返回cnt[low]，如果不在(不满足low <= mx)则返回0。
         return spells # 这是原地改变spells数组然后返回spells。且一次改变一个spells的元素不会影响最后答案的正确性。 
+    
+# 2025.11.10
