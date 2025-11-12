@@ -50,5 +50,6 @@ class Solution:
         # 而dummy.next因为dummy = ListNode(next = head)所以能够跟着整体头节点的变化而变化，从而始终指向正确的头节点。
         # 所以最后只能返回dummy.next，不能返回head。
 
+# 中等
 # 2025.11.12 16:19
 # 花了大概一小时，从15:20左右写到16:20。
