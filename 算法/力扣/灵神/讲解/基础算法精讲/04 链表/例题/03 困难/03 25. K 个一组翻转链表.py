@@ -51,3 +51,6 @@ class Solution:
             
         return dummy.next 
         # 最后返回虚拟前驱节点的下一个节点即可，dummy.next就是整段链表的头节点。
+
+# 困难
+# 2025.11.13 10:55 ~ 11:45 花了大概五十分钟。
