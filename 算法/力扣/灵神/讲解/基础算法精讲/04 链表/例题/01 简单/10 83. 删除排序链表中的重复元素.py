@@ -1,6 +1,6 @@
-# 单向链表的定义。
-
 from typing import Optional
+
+# 单向链表的定义。
 
 class ListNode:
     def __init__(self, val=0, next=None):
