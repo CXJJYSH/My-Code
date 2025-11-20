@@ -23,3 +23,9 @@ class Solution:
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
         return self.isSymmetricTree(root.left, root.right)
         # 最后因为题目保证了至少有一个节点，所以不用判断根节点是否为空，直接对左右子树进行判断是否对称就可以了。 
+
+# 时间复杂度O(n)
+# 空间复杂度O(n)
+
+# 简单
+# 2025.11.20 15:40
