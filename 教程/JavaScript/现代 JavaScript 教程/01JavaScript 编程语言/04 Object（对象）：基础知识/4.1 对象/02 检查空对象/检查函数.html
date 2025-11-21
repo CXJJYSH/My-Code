@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<script src="https://zh.js.cx/test/libs.js"></script>
+<script src="检查函数.html`"></script>
+
+<script>
+
+    //第一段是我自己想出来的代码。
+
+    function isEmpty(obj) {
+        let ans = 0;
+        for (i in obj) {
+            ans += 1;
+        }
+        if (ans == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //第二段是教程给出的示例代码，比我的更加简洁优雅。
+
+    function isEmpty2(obj) {
+        for (let key in obj) {
+            return false; //如果进到循环里，说明有属性。
+        }
+        return true;
+    }
+
+</script>
