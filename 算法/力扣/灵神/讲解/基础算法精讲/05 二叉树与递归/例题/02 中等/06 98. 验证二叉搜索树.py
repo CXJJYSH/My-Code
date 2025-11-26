@@ -1,7 +1,7 @@
 from cmath import inf
 from typing import Optional
 
-# 单向链表定义。
+# 二叉树定义。
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
