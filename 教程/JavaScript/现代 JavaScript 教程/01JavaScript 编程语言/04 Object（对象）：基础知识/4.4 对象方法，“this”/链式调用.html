@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<script>
+
+    // 自己想的时候完全没想到可以直接加一句return this就能完美实现这个功能了。
+    // 现在想一下，这个方法实在是精妙啊，太合理了，太巧妙了，直接利用this的特性实现链式调用了。
+
+    let ladder = {
+        step: 0,
+        up() {
+            this.step++;
+            return this;
+        },
+        down() {
+            this.step--;
+            return this;
+        },
+        showStep() {
+            alert(this.step);
+            return this;
+        }
+    };
+
+    ladder.up().up().down().showStep().down().showStep();
+    ladder
+        .up()
+        .up()
+        .down()
+        .showStep()
+        .down()
+        .showStep();
+
+</script>
+
+<!--
+
+2025.11.26 16:40
+
+-->

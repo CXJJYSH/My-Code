@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<script>
+
+    // 自己写的可运行代码。（非严格模式下不会报错）
+
+    let calculator1 = {
+        a: 0,
+        b: 0,
+        read() {
+            a = prompt("a?", 0); // 直接输入0才是数字，带引号就是字符串。
+            b = prompt("b?", 0); // 直接输入0才是数字，带引号就是字符串。
+        },
+        sum() {
+            return +a + +b;
+        },
+        mul() {
+            return a * b;
+        }
+    }; //这里也要有分号。
+
+    calculator.read();
+    alert(calculator.sum());
+    alert(calculator.mul());
+
+    // 教学代码。非常精妙。
+
+    let calculator2 = {
+        read() {
+            this.a = +prompt("a?", 0), // 直接输入0才是数字，带引号就是字符串。
+                this.b = +prompt("b?", 0) // 直接输入0才是数字，带引号就是字符串。
+        },
+        sum() {
+            return this.a + this.b
+        },
+        mul() {
+            return this.a * this.b
+        }
+    }; // 这里也要有分号。
+
+    calculator2.read();
+    alert(calculator2.sum());
+    alert(calculator2.mul());
+
+</script>
+
+<!--
+
+这一节于 2025.11.26 16:40 结束。
+
+-->
