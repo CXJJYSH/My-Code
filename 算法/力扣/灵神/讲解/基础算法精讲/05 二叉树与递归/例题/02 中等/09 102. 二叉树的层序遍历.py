@@ -1,3 +1,4 @@
+from collections import deque
 from typing import List, Optional
 
 # 二叉树定义。
@@ -7,6 +8,8 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
+
+# 方法一 用cur, nxt两个数组。
 
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
@@ -42,3 +45,39 @@ class Solution:
 
 # 中等
 # 2025.11.27 15:30 看起来花的时间比较久是因为中间干别的事去了（试了一下新的加速器，biubiu加速器）。 
+
+# 方法二 用队列
+
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        if root is None:
+            return []
+        # 判空理由和上面一样。
+
+        ans = []
+        
+        q = deque([root])
+        # 用deque初始化双端队列q。
+        # 注意初始化的语法格式。
+
+        while q:
+            vals = []
+            
+            for _ in range(len(q)):
+                node = q.popleft()
+                
+                vals.append(node.val)
+                
+                if node.left:
+                    q.append(node.left)
+                
+                if node.right:
+                    q.append(node.right)
+            
+            ans.append(vals)
+        
+        return ans 
+    
+# 时间复杂度O(n)
+# 空间复杂度O(n)
+# 2025.11.27 23:06 
