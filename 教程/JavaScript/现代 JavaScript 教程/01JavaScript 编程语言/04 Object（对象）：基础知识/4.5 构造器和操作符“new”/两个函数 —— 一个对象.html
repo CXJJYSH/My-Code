@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<script>
+
+    // 关键是返回相同的“外部定义”对象。
+    let obj = {};
+
+    function A() {
+        return obj;
+    }
+    function B() {
+        return obj;
+    }
+
+    let a = new A;
+    let b = new B;
+
+    alert(a == b);
+</script>
