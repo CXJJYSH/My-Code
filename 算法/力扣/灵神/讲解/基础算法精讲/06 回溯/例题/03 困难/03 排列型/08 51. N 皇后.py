@@ -130,6 +130,6 @@ class Solution:
 # 综上，依靠同一套状态保存数据的方法在修改完之后都一定要恢复现场。 
 
 # 如果之后这个总结出现不适用的情况，再去灵神视频下留言提问。 
-# https://www.bilibili.com/video/BV1mY411D7f6/?vd_source=72e41d7969e9dc71609c47e6fe7c343e&spm_id_from=333.788.videopod.sections  
+# https://www.bilibili.com/video/BV1mY411D7f6/?vd_source=72e41d7969e9dc71609c47e6fe7c343e&spm_id_from=333.788.videopod.sections 
 
 # 2025.12.05 16:30 
