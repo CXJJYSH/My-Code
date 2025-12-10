@@ -97,4 +97,86 @@ class Solution:
                 else:
                     f[i + 1][c] = f[i][c] + f[i][c - x] # 这里就是边界调整之后的计算公式。 
         
-        return f[n][target]         
+        return f[n][target] # n是防止出现负数边界调整后的最后元素索引，target是表示目标的索引。 
+    
+# 2025.12.09 
+
+# 改成递推后的空间优化一：用两个数组 
+
+class Solution:
+    def findTargetSumWays(self, nums: List[int], target: int) -> int:
+        target += sum(nums)
+        
+        if target < 0 or target % 2:
+            return 0
+        
+        target //= 2
+        
+        n = len(nums)
+        
+        f = [[0] * (target + 1) for _ in range(2)]
+        f[0][0] = 1
+        
+        for i, x in enumerate(nums):
+            for c in range(target + 1):
+                if c < x:
+                    f[(i + 1) % 2][c] = f[i % 2][c]
+                else:
+                    f[(i + 1) % 2][c] = f[i % 2][c] + f[i % 2][c - x]
+        
+        return f[n % 2][target] 
+        
+        # 所有与i或n有关的索引都模2。这样就能简化为在f[0]、f[1]两个数组上进行状态保存和更新。 
+
+# 2025.12.10 16:38 
+
+# 改成递推后的空间优化二：只用一个数组 
+
+class Solution:
+    def findTargetSumWays(self, nums: List[int], target: int) -> int:
+        target += sum(nums)
+        
+        if target < 0 or target % 2:
+            return 0
+        
+        target //= 2
+        
+        n = len(nums)
+        
+        f = [0] * (target + 1) # 空间优化二直接把第二个维度删了。 
+        f[0] = 1
+        
+        for x in nums:
+            for c in range(target, x - 1, -1): 
+                # 这里的倒序遍历和之前的正序遍历的区别在于多了一个边界限制， 
+                # 边界限制的原因是如果c小于了x，到了x - 1，那么c - x就会变成负数下标，导致程序出错。 
+                # 所以限制边界只是为了防止越界这个问题。 
+                if c < x:
+                    f[c] = f[c]
+                else:
+                    f[c] = f[c] + f[c - x]
+                # 然后上面的代码其实可以改成 
+                # if c >= x: 
+                #     f[c] = f[c] + f[c - x] 
+                # 完整修改见下 
+        
+        return f[target] 
+    
+# 空间优化二完整修改 
+
+class Solution:
+    def findTargetSumWays(self, nums: List[int], target: int) -> int:
+        target += sum(nums)
+        if target < 0 or target % 2:
+            return 0
+        target //= 2
+        n = len(nums)
+        f = [0] * (target + 1)
+        f[0] = 1
+        for x in nums:
+            for c in range(target, x - 1, -1):
+                if c >= x:
+                    f[c] = f[c] + f[c - x]
+        return f[target] 
+    
+# 2025.12.10 17:13 
