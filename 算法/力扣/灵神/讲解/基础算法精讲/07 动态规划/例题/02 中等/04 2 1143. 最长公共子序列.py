@@ -13,7 +13,7 @@ class Solution:
         
         def dfs(i, j):
             if i < 0 or j < 0:
-                return 0
+                return 0 # 表示当一个字符串为空时，此时两字符串的剩余部分的最长公共子序列的长度为0。 
             
             if text1[i] == text2[j]:
                 return dfs(i - 1, j - 1) + 1
