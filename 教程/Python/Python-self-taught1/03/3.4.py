@@ -1,0 +1,5 @@
+bianliang1=input()
+bianliang2=input()
+x=int(bianliang1)
+y=int(bianliang2)
+print(x%y)

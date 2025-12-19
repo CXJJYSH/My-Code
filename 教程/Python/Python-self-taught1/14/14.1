@@ -1,0 +1,26 @@
+#第一版
+
+class Square:
+    square_list=[]
+    def __init__(self,s):
+        self.s=s
+        self.square_list.append(self.s)
+        print("Created!")
+        print(Square.square_list)
+s1=Square(1)
+s2=Square(2)
+s3=Square(3)
+print(Square.square_list)
+
+#第二版
+
+class Square:
+    square_list=[]
+    def __init__(self,s):
+        self.s=s
+        self.square_list.append(self.s)
+        print("Created!")
+s1=Square(1)
+s2=Square(2)
+s3=Square(3)
+print(Square.square_list)

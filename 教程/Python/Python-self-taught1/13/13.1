@@ -1,0 +1,17 @@
+class Rectangle:
+    def __init__(self,w,l):
+        self.width=w
+        self.length=l
+        print("Created!")
+    def calculate_perimeter(self):
+        return (self.width+self.length)*2
+class Square:
+    def __init__(self,s):
+        self.s=s
+        print("Created!")
+    def calculate_perimeter(self):
+        return self.s*4
+Rectangle=Rectangle(10,20)
+print(Rectangle.calculate_perimeter())
+Square=Square(10)
+print(Square.calculate_perimeter())
