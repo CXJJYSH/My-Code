@@ -14,7 +14,7 @@ class Solution:
 
         def dfs(node):
             if node is None:
-                return -1 # 这样设置边界条件就能使之后两个取max的地方边界结果都为正确的0。 
+                return -1 # 这样设置边界条件就能使之后两个取max的地方边界情况都有正确的结果0。 
             
             l_len = dfs(node.left)
             r_len = dfs(node.right)
