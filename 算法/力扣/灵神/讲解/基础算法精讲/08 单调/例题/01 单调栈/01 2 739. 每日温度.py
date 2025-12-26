@@ -17,9 +17,12 @@ class Solution:
 
             if st:
                 ans[i] = st[-1] - i 
-            
+                # 这里其实相当于是往前找更小的元素，然后将栈中第一个比它大的元素的索引与更小的元素的索引相减。 
+                # 当然，剔除比当前枚举的元素相等或更小的元素也可以是说在找第一个比当前元素大的元素。 
+
             st.append(i)
             # 栈里面保存的是温度对应的索引。 
+            # 最后都要把当前元素的索引加到栈里面。 
 
         return ans 
     
@@ -34,3 +37,28 @@ class Solution:
 # 空间复杂度O(min(n, U))，U = max - min + 1 
 
 # 2025.12.26 00:16 
+
+# 从左到右 写法 
+
+class Solution:
+    def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
+        n = len(temperatures)
+        ans = [0] * n
+        st = []
+
+        for i, t in enumerate(temperatures):
+            while st and t > temperatures[st[-1]]:
+                j = st.pop() 
+                ans[j] = i - j
+                # 每一次循环都在查看当前元素之前存进栈的更小元素，然后分别进行索引相减得到每一个的答案。 
+                # 相当于是在往前找更小的元素。 
+
+            st.append(i)
+            # 最后都要把当前元素的索引加到栈里面。 
+
+        return ans 
+    
+# 时间复杂度O(n) 
+# 空间复杂度O(n)或O(min(n, U))，U = max - min + 1 
+
+# 2025.12.26 23:59 
