@@ -1,6 +1,8 @@
 from heapq import heapify, heapreplace
 from typing import List
 
+# 堆写法 
+
 class Solution:
     def smallestRange(self, nums: List[List[int]]) -> List[int]:
         h = [(arr[0], i, 0) for i, arr in enumerate(nums)]
@@ -38,3 +40,6 @@ class Solution:
 # 2026.01.10 23:57 
 
 # 2026.01.11 00:05 
+
+# 滑动窗口写法 
+
