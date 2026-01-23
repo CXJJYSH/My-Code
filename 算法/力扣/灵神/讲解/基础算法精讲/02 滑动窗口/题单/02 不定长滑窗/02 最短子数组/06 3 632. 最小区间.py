@@ -1,3 +1,4 @@
+from cmath import inf
 from heapq import heapify, heapreplace
 from typing import List
 
@@ -43,3 +44,40 @@ class Solution:
 
 # 滑动窗口写法 
 
+class Solution:
+    def smallestRange(self, nums: List[List[int]]) -> List[int]:
+        pairs = sorted((x, i) for i, arr in enumerate(nums) for x in arr) 
+        # 这里的sorted是排序的意思。会影响后面的时间复杂度。 
+        # 这里构建的元组列表每个元组的元素分别是nums中列表的元素值和nums中列表的索引。 
+        # 后面也是一一对应的。 
+        
+        ans_l, ans_r = -inf, inf 
+        
+        empty = len(nums)
+        cnt = [0] * empty # cnt是用来查找某个索引对应的列表中的元素出现次数是否大于或等于一的列表。 
+        
+        left = 0
+
+        for r, i in pairs: # 先值，后索引。 
+            if cnt[i] == 0:
+                empty -= 1 # 这里是先处理边界条件，再更新。写代码的时候要灵活变通。 
+            cnt[i] += 1
+            
+            while empty == 0:
+                l, x = pairs[left] # 这里也可以改成 l, i ，效果是一样的，也不会出错，这是Python中特别的一个要注意的语法。 
+                
+                if r - l < ans_r - ans_l:
+                    ans_l, ans_r = l, r 
+                # 这里更新答案是用两边的端点值更新结果的区间端点，最后要返回一个区间。 
+                
+                cnt[x] -= 1 # 这里是先更新，再处理边界条件。写代码的时候要灵活变通。 
+                if cnt[x] == 0:
+                    empty += 1
+                left += 1
+        
+        return [ans_l, ans_r] # 最后返回最小区间。 
+    
+# 时间复杂度O(L * log L)，L为所有nums[i]的长度之和。排序占用O(L * log L)的时间复杂度，循环不是瓶颈，瓶颈在排序上。使用归并可以做到O(L * log n)。 
+# 空间复杂度O(L)，为pairs的长度。 
+
+# 2026.01.24 00:20 
