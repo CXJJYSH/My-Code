@@ -1,0 +1,30 @@
+# 自己写的代码 
+
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        words = s.split(" ")
+        first_word = list(words[0])
+        num = 0
+        for c in first_word:
+            if c in "aeiou":
+                num += 1
+        for i in range(1, len(words)):
+            word = list(words[i])
+            cur_num = 0
+            for c in word:
+                if c in "aeiou":
+                    cur_num += 1
+            if cur_num == num:
+                left = 0
+                right = len(word) - 1
+                while left < right:
+                    word[left], word[right] = word[right], word[left]
+                    left += 1
+                    right -= 1
+            words[i] = "".join(word)
+        return " ".join(words)
+
+# 时间复杂度O(n)，因为最多不超过2 * n次操作。 
+# 空间复杂度O(n) 
+
+# 2026.02.18 18:00 
