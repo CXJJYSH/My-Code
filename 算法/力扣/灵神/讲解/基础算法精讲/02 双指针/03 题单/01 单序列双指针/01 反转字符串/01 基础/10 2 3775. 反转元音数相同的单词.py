@@ -68,3 +68,31 @@ class Solution:
 # 2026.03.09 14:24 今天看下Kitty行不行。 OK，可以。 
 
 # 2026.03.10 23:07 今天周二，好多课，只有早八没课，快燃尽了。先不搞了。 
+
+# 2026.03.11 23:06 回归。 
+
+# 灵神的写法 
+
+# 在类之外创建了一个函数。 
+
+def count_vowel(s: str) -> int:
+    return sum(c in "aeiou" for c in s)
+
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        a = s.split()
+        cnt0 = count_vowel(a[0])
+
+        for i in range(1, len(a)):
+            if count_vowel(a[i]) == cnt0:
+                a[i] = a[i][::-1]
+        
+        return " ".join(a)
+        
+# 思路和我是完全一样的，但是灵神计算元音个数封装成了一个函数，反转时直接调用了库函数，比我的更简洁。 
+# 但是时空复杂度是一样的。 
+
+# 时间复杂度O(n) 
+# 空间复杂度O(n) 
+
+# 2026.03.11 23:10 
