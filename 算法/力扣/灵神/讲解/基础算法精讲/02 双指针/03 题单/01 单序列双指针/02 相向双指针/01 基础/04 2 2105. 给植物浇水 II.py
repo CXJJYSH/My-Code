@@ -92,3 +92,44 @@ class Solution:
 # OK，没问题了。 
 
 # 2026.03.15 19:16 
+
+# 后来看了一遍灵神的题解又自己去写了一遍。 
+
+class Solution:
+    def minimumRefill(self, plants: List[int], capacityA: int, capacityB: int) -> int:
+        ans = 0
+        
+        a = capacityA
+        b = capacityB
+        
+        left = 0
+        right = len(plants) - 1
+        
+        while left < right:
+            if a < plants[left]:
+                ans += 1
+                a = capacityA
+
+            a -= plants[left]
+            left += 1
+        
+            if b < plants[right]:
+                ans += 1
+                b = capacityB
+            
+            b -= plants[right]
+            right -= 1
+        
+        if left == right and max(a, b) < plants[left]:
+            ans += 1
+        
+        return ans 
+    
+# 时间复杂度O(n) 
+# 空间复杂度O(1) 
+
+# 2026.03.15 19:27 
+
+# 提交过程中发现我写的灵神版本和灵神原版时间竟然有差异，去检验了几遍才发现其实没啥差异。 
+
+# 2026.03.15 19:31 
