@@ -16,6 +16,8 @@
 </p>
 
 <style>
+    /* CSS Specificity */
+    /* 更细化的选择词比更宽泛的选择词优先级更高，大括号里的语句的优先级也随之更高，优先执行优先级高的语句 */
     p {
         font-family: Arial;
         margin-top: 0;
@@ -28,6 +30,7 @@
         width: 300px;
         line-height: 24px;
         margin-bottom: 5px;
+        /* 所以对于这里的margin-bottom，.video-title里的优先执行，p里的不执行。 */
     }
 
     .video-stats {
