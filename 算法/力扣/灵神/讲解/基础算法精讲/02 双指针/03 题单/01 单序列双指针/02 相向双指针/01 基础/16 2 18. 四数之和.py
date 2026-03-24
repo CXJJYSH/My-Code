@@ -98,7 +98,8 @@ class Solution:
                 if j > i + 1 and nums[j] == nums[j - 1]:
                     continue 
                 # 应该时当前j如果能记入答案的话还是要记一次的。 
-                # 我的写法就可能会漏掉相同元素组成的四元组。 
+                # 我的写法可能会漏掉相同元素组成的四元组。 
+                # 我的 if j < len(nums) - 1 and nums[j] == nums[j + 1]: continue 的写法应该也没有一次性跳过所有重复元素。 
             
                 left = j + 1
                 right = len(nums) - 1
@@ -124,4 +125,7 @@ class Solution:
         
         return ans 
     
-# 
+# 时间复杂度O(n ^ 3) 
+# 空间复杂度O(1) 
+
+# 2025.03.24 23:59 
