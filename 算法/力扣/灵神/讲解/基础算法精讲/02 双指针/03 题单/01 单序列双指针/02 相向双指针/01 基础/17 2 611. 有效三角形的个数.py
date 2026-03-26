@@ -59,3 +59,85 @@ class Solution:
         return ans #上面的三个错误都是在解答错误后回看题解纠正过来的。
         
 # 2026.03.25 23:36 
+
+# 2026.03.26 第二遍写的代码 
+
+class Solution:
+    def triangleNumber(self, nums: List[int]) -> int:
+        nums.sort()
+        
+        ans = 0
+        
+        for i in range(len(nums)):
+            left = i + 1
+            right = len(nums) - 1
+        
+            while left < right:
+                if nums[i] + nums[left] > nums[right]: 
+                    ans += right - left 
+                    left += 1 
+                else:
+                    right -= 1
+        
+        return ans 
+    
+# 我这里一开始用的正序枚举最短边，会有遗漏的情况。 
+# 而灵神用倒序枚举最长边就没有遗漏的情况。 
+
+# 一改成倒序枚举最长边就通过了。 
+
+# 我这里倒序枚举最长边，用最小两边之和大于第三边，可以用相向双指针。 
+# 而正序枚举最短边，用最大两边之差相遇第三边，可以用同向双指针。 
+
+class Solution:
+    def triangleNumber(self, nums: List[int]) -> int:
+        nums.sort()
+        
+        ans = 0
+        
+        for i in range(2, len(nums)):
+            left = 0
+            right = i - 1
+        
+            while left < right:
+                if nums[left] + nums[right] > nums[i]:
+                    ans += right - left 
+                    right -= 1
+                else:
+                    left += 1
+        
+        return ans 
+    
+# 时间复杂度O(n ^ 2) 
+# 空间复杂度O(1) 
+
+# 同向双指针 
+# 最大两边之差小于第三边 
+# 正序枚举最短边 
+# 三边紧挨着起始 
+
+class Solution:
+    def triangleNumber(self, nums: List[int]) -> int:
+        nums.sort() 
+        
+        ans = 0
+        
+        for i in range(len(nums) - 2):
+            if nums[i] == 0:
+                continue 
+        
+            j = i + 1
+            for k in range(j + 1, len(nums)):
+                while nums[k] - nums[j] >= nums[i]:
+                    j += 1
+        
+                ans += k - j 
+        
+        return ans 
+    
+# 为什么这里没检验nums[i]是否为0索引就超出范围了？为什么枚举最短边要检验0，枚举最长边就不用？ 
+
+# 和大于第三边，0永远不能和其它元素构成三角形，所以不会统计。 
+# 差小于第三边，全是0会使j在while循环一直增大超出范围，所以要检验0直接continue，如果全是0直接跳出循环，直接返回 ans == 0 。 
+
+# 2026.03.26 12:40 
