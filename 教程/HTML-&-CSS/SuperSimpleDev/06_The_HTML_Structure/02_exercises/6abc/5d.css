@@ -1,0 +1,25 @@
+p {
+  font-family: Arial;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.link {
+  /* color: blue; */
+  color: rgb(58, 108, 199);
+}
+
+/* 2026.03.26 22:56 */
