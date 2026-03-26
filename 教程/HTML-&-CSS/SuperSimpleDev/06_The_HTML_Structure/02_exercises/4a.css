@@ -1,0 +1,31 @@
+.button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 25px;
+  padding-right: 25px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.uber-button {
+  background-color: black;
+  color: white;
+  border: none;
+  height: 41px;
+  width: 124px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.uber-button:hover {
+  opacity: 0.8;
+}
+
+/* 2026.03.26 22:39 */
