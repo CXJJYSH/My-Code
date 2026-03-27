@@ -1,0 +1,37 @@
+p {
+  font-family: Arial;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: gray;
+}
+
+.email {
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+.email-input {
+  margin-bottom: 12px;
+  width: 300px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 4px;
+  height: 25px;
+}
+
+.click {
+  margin-bottom: 12px;
+  font-size: 12px;
+}
+
+.agree {
+  background-color: rgb(10, 102, 194);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 310px;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 20px;
+}
+
+/* 2026.03.27 23:38 */
