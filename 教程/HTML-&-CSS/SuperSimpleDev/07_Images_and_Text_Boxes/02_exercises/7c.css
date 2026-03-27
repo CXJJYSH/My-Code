@@ -1,0 +1,9 @@
+.cat {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 2026.03.27 16:50 */
