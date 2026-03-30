@@ -1,0 +1,20 @@
+.name,
+.email {
+  display: block;
+}
+
+.name {
+  margin-bottom: 5px;
+}
+
+/* 
+
+也可以直接 
+input {
+  display: block;
+  margin-bottom: 5px;
+} 
+
+*/
+
+/* 2026.03.30 12:34 */
