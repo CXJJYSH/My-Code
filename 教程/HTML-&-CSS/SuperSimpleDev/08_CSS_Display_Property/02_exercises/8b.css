@@ -1,0 +1,12 @@
+.survey,
+.yes,
+.no {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.survey {
+  width: 230px;
+}
+
+/* 2026.03.30 21:12 */
