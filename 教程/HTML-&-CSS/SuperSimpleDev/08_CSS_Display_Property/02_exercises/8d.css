@@ -1,0 +1,42 @@
+.first,
+.last {
+  width: 100px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: rgb(100, 100, 100);
+  border-width: 1px;
+}
+
+.email {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: block;
+  width: 228px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 8px;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: rgb(100, 100, 100);
+  border-width: 1px;
+}
+
+.sign-up {
+  background-color: rgb(47, 127, 231);
+  width: 240px;
+  border: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+/* 2026.03.30 23:38 */
