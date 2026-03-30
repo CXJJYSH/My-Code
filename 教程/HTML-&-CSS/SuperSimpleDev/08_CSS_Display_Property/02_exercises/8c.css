@@ -1,0 +1,27 @@
+.google {
+  width: 300px;
+  display: block;
+  margin-left: 515px;
+  margin-bottom: 10px;
+}
+
+.search {
+  width: 500px;
+  font-size: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  border-color: rgb(200, 200, 200);
+  border-style: none;
+  border-radius: 30px;
+  margin-left: 400px;
+
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  /* 水平 垂直 模糊 扩展 颜色（不透明度） */
+
+  /* box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25); */
+  /* 水平 垂直 模糊 颜色（不透明度） */
+}
+
+/* 2026.03.30 22:49 */
