@@ -1,0 +1,14 @@
+div {
+  width: 300px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(150, 150, 150);
+  padding-left: 15px;
+  padding-bottom: 20px;
+}
+
+.service {
+  font-family: Arial;
+}
+
+/* 2026.03.31 13:55 */
