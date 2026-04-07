@@ -1,0 +1,20 @@
+.header {
+    height: 55px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.left {
+    background-color: lightblue;
+}
+
+.middle {
+    background-color: lightpink;
+}
+
+.right {
+    background-color: lightblue;
+}
+
+/* 2026.04.07 17:42 */
