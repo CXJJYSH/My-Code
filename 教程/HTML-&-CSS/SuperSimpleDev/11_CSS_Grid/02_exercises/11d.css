@@ -1,0 +1,76 @@
+.grid-1 {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    column-gap: 20px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 35px 1fr;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+p {
+    font-family: Arial;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.profile {
+    width: 200px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    vertical-align: top;
+    margin-right: 15px;
+}
+
+.picture {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 12px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 8px;
+    margin-bottom: 4px;
+}
+
+.add {
+    background-color: rgb(24, 119, 242);
+    border: none;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-left: 8px;
+    margin-bottom: 10px;
+}
+
+.portrait {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    border-radius: 25px;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.introduce {
+    color: rgb(100, 100, 100);
+    font-size: 16px;
+    margin-left: 4px;
+}
+
+/* 我现在知道为什么我一开始没有将小头像和共同好友文本排列在同一水平线上了 
+是共同好友文本我给它加了 margin-bottom: 12px; 
+所以它必定会像上排 
+只要不改动它的垂直位置就不会对不齐 
+小头像和文本都不要改动垂直位置。 */
+
+/* 2026.04.07 15:55 */
