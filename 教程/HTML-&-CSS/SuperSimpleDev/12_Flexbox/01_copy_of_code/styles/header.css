@@ -7,14 +7,19 @@
 
 .left {
     background-color: lightblue;
+    width: 150px;
 }
 
 .middle {
     background-color: lightpink;
+    flex: 1;
 }
 
 .right {
     background-color: lightblue;
+    width: 200px;
 }
 
 /* 2026.04.07 17:42 */
+
+/* 2026.04.07 23:49 */
