@@ -1,0 +1,7 @@
+.flexbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* 2026.04.08 23:30 */
