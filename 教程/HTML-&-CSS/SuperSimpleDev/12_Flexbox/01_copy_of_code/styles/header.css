@@ -13,6 +13,8 @@
 .middle {
     background-color: lightpink;
     flex: 1;
+    margin-left: 70px;
+    margin-right: 35px;
 }
 
 .right {
@@ -23,3 +25,5 @@
 /* 2026.04.07 17:42 */
 
 /* 2026.04.07 23:49 */
+
+/* 2026.04.08 13:00 */
