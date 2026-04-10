@@ -1,0 +1,45 @@
+from typing import List
+
+# 2026.03.26 
+
+# 同向双指针 
+
+class Solution:
+    def triangleNumber(self, nums: List[int]) -> int:
+        nums.sort() 
+        ans = 0
+        for i in range(len(nums) - 2):
+            if nums[i] == 0:
+                continue 
+            j = i + 1
+            for k in range(j + 1, len(nums)):
+                while nums[k] - nums[j] >= nums[i]:
+                    j += 1
+                ans += k - j 
+        return ans
+    
+# 同向双指针 
+
+class Solution:
+    def triangleNumber(self, nums: List[int]) -> int:
+        nums.sort()
+        n = len(nums)
+        
+        ans = 0
+        
+        for i in range(n - 2):
+            a = nums[i]
+            if a == 0:
+                continue 
+            j = i + 1
+            for k in range(i + 2, n):
+                while nums[k] - nums[j] >= a:
+                    j += 1
+                ans += k - j
+        
+        return ans 
+    
+# 时间复杂度O(n ^ 2) 
+# 空间复杂度O(1) 
+
+# 2026.04.10 11:36 
