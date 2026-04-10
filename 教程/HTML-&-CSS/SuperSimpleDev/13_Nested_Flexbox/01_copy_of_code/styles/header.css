@@ -53,7 +53,8 @@
 }
 
 .search-icon {
-    height: 20px;
+    height: 25px;
+    margin-top: 4px;
 }
 
 .voice-search-button {
