@@ -1,0 +1,24 @@
+.flexbox-1 {
+    display: flex;
+    height: 50px;
+}
+
+.one {
+    background-color: lightpink;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexbox-2 {
+    background-color: black;
+    color: white;
+}
+
+.two {
+    background-color: lightblue;
+    width: 200px;
+}
+
+/* 2026.04.13 17:30 */
