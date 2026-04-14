@@ -1,0 +1,70 @@
+div {
+    font-family: Arial;
+}
+
+.container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 400px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.header {
+    font-size: 14px;
+    color: rgb(120, 120, 120);
+    margin-bottom: 20px;
+}
+
+.email {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cat-container {
+    margin-right: 10px;
+}
+
+.pet {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+.detailed-information {
+    flex: 1;
+}
+
+.row1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.time {
+    color: rgb(120, 120, 120);
+    font-size: 14px;
+}
+
+.row2 {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.row3 {
+    color: rgb(120, 120, 120);
+}
+
+/* 2026.04.14 14:18 */
