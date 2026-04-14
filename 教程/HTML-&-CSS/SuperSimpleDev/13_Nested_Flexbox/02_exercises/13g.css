@@ -1,0 +1,77 @@
+div {
+    font-family: Arial;
+}
+
+.container {
+    display: flex;
+    width: 420px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.column1 {
+    margin-right: 10px;
+}
+
+.picture {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.column2 {
+    flex: 1;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.website {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.owner {
+    color: rgb(111, 111, 111);
+}
+
+.text {
+    line-height: 20px;
+    margin-bottom: 15px;
+}
+
+.link-button {
+    display: flex;
+    border-color: rgb(200, 200, 200);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 15px;
+    overflow: hidden;
+    align-items: center;
+}
+
+.left {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(220, 220, 220);
+    margin-right: 10px;
+}
+
+.right {
+    flex: 1;
+}
+
+.youtube-link {
+    color: rgb(111, 111, 111);
+    margin-bottom: 3px;
+}
+
+.introduce {
+    line-height: 22px;
+}
+
+/* 2026.04.14 15:50 */
