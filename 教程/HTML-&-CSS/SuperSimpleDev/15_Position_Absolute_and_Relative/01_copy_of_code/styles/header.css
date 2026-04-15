@@ -15,6 +15,8 @@
     border-bottom-width: 1px;
     border-style: solid;
     border-color: rgb(229, 228, 228);
+
+    z-index: 100;
 }
 
 .left {
@@ -109,6 +111,25 @@
     height: 24px;
 }
 
+.notifications-icon-container {
+    position: relative;
+}
+
+.notifications-count {
+    position: absolute;
+    top: -2px;
+    right: -5px;
+    background-color: rgb(200, 0, 0);
+    color: white;
+    font-family: Roboto, Arial;
+    font-size: 11px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 10px;
+}
+
 .current-user-picture {
     height: 32px;
     border-radius: 16px;
@@ -129,3 +150,5 @@
 /* 2026.04.13 17:07 */
 
 /* 2026.04.14 16:51 */
+
+/* 2026.04.15 22:29 */
