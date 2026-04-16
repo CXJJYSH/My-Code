@@ -4,5 +4,15 @@
     bottom: 0;
     top: 55px;
     background-color: white;
-
+    width: 72px;
 }
+
+.sidebar-link {
+    height: 76px;
+}
+
+.sidebar-link:hover {
+    background-color: rgb(235, 235, 235);
+}
+
+/* 2026.04.16 16:25 */
