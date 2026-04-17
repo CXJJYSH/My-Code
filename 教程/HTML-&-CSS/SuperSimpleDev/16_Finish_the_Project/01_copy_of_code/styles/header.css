@@ -70,21 +70,31 @@
     border-color: rgb(192, 192, 192);
     margin-left: -1px;
     margin-right: 10px;
+    /* transition: background-color 0.15s; */
+}
+
+.search-button:hover {
+    background-color: rgb(230, 230, 230);
 }
 
 .search-button,
 .voice-search-button,
-.upload-icon-container {
+.upload-icon-container,
+.youtube-apps-container,
+.notifications-icon-container {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .search-button .tooltip,
 .voice-search-button .tooltip,
-.upload-icon-container .tooltip {
+.upload-icon-container .tooltip,
+.youtube-apps-container .tooltip,
+.notifications-icon-container .tooltip {
     font-family: Roboto, Arial;
     position: absolute;
     background-color: grey;
@@ -104,7 +114,9 @@
 
 .search-button:hover .tooltip,
 .voice-search-button:hover .tooltip,
-.upload-icon-container:hover .tooltip {
+.upload-icon-container:hover .tooltip,
+.youtube-apps-container:hover .tooltip,
+.notifications-icon-container:hover .tooltip {
     opacity: 1;
 }
 
@@ -167,6 +179,7 @@
 .current-user-picture {
     height: 32px;
     border-radius: 16px;
+    cursor: pointer;
 }
 
 /* 2026.04.07 17:42 */
@@ -188,3 +201,5 @@
 /* 2026.04.15 22:29 */
 
 /* 2026.04.16 23:30 */
+
+/* 2026.04.17 15:56 */
