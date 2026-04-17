@@ -1,0 +1,22 @@
+from typing import List
+
+# 空间复杂度O(m + n)的写法 
+
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        
+        row_has_zero = [0 in row for row in matrix]
+        col_has_zero = [0 in col for col in zip(*matrix)] # *matrix将matrix解包成行，给zip打包成元组，再存放在列表里。 
+
+        for i, row_0 in enumerate(row_has_zero):
+            for j, col_0 in enumerate(col_has_zero):
+                if row_0 or col_0: # 如果这一元素所在的行或列有0，则将其置为0。 
+                    matrix[i][j] = 0 
+
+# 时间复杂度O(m * n)，创建row_has_zero和col_has_zero时分别进行了两次遍历。 
+# 空间复杂度O(m + n) 
+
+# 2026.04.17 12:22 
