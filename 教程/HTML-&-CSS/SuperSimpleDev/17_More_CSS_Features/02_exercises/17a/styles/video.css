@@ -42,6 +42,18 @@
     row-gap: 40px;
 }
 
+@media (min-width: 1000px) {
+    .video-title {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .video-author,
+    .video-stats {
+        font-size: 14px;
+    }
+}
+
 @media (max-width: 750px) {
     .video-grid {
         grid-template-columns: 1fr 1fr;
@@ -80,3 +92,5 @@
 /* 2026.04.20 16:41 */
 
 /* 2026.04.20 17:16 */
+
+/* 2026.04.20 22:39 */
