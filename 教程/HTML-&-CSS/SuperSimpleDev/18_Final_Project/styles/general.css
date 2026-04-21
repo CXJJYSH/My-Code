@@ -15,7 +15,7 @@ body {
     height: 3000px;
 }
 
-@media (min-width: 1200.1px) {
+@media (min-width: 1600.1px) {
     main {
         margin-left: 168px;
     }
@@ -24,3 +24,5 @@ body {
     虽然body里面还有header和sidebar，但是这两个都是position: fixed，
     所以不受margin-left的影响，实际上只影响body里的main。 */
 }
+
+/* 2026.04.07 17:42 - 2026.04.21 12:25 */

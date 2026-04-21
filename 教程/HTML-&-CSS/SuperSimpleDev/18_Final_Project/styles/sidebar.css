@@ -1,4 +1,4 @@
-@media (max-width: 1200px) {
+@media (max-width: 1600px) {
     .sidebar {
         position: fixed;
         left: 0;
@@ -36,7 +36,7 @@
     }
 }
 
-@media (min-width: 1200.1px) {
+@media (min-width: 1600.1px) {
     .sidebar {
         position: fixed;
         left: 0;
@@ -69,3 +69,7 @@
         font-size: 14px;
     }
 }
+
+/* 调成1600可以让我在初始状态直接按个 Ctrl + - 直接转换侧边栏状态。 */
+
+/* 2026.04.07 17:42 - 2026.04.21 12:25 */
