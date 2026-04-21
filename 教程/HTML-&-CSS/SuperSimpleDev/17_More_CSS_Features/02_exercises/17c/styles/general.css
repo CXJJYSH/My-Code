@@ -14,3 +14,13 @@ body {
     background-color: rgb(248, 248, 248);
     height: 3000px;
 }
+
+@media (min-width: 1200.1px) {
+    main {
+        margin-left: 168px;
+    }
+
+    /* 这里写成main或者body效果都是一样的，
+    虽然body里面还有header和sidebar，但是这两个都是position: fixed，
+    所以不受margin-left的影响，实际上只影响body里的main。 */
+}
