@@ -40,6 +40,7 @@ class Solution:
         tail.next = head 
         head.next = None 
         return rev_head 
+        # rev_head是答案，在递到最底端的时候答案就是正确的了，之后只是添加正确方向的指针罢了。 
     
 # 时间复杂度O(n) 
 # 空间复杂度O(n) 
