@@ -1,0 +1,3 @@
+document.body.innerHTML = "";
+
+// 2026.04.22 23:19
