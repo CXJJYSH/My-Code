@@ -86,4 +86,12 @@ class LRUCache:
 # 时间复杂度：所有操作均为 O(1)。 
 # 空间复杂度：O(min(p,capacity))，其中 p 为 put 的调用次数。刚开始调用put会逐渐占用空间，之后可能会达到题目限制的最大值capacity。 
 
+# 说实话这两种方法我感觉都比我目前掌握的水平要复杂，现在还不能完全熟练掌握。 
+
 # 2026.04.28 16:13 
+
+# 还有这道拓展题，之后有机会来做。 
+
+# https://leetcode.cn/problems/lfu-cache/description/ 
+
+# 2026.04.28 16:25 
