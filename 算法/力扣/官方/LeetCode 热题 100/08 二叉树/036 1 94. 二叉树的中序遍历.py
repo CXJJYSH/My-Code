@@ -34,3 +34,45 @@ class Solution:
 # 明天看O(1)空间复杂度的写法。 
 
 # 2026.04.28 16:25 
+
+# 线索二叉树写法 
+
+# Definition for a binary tree node.
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+class Solution:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        ans = []
+        
+        while root:
+            if root.left:
+                pre = root.left 
+
+                while pre.right and pre.right is not root:
+                    pre = pre.right 
+                
+                if pre.right is None:
+                    pre.right = root 
+                    root = root.left 
+                    continue 
+                
+                pre.right = None 
+            
+            ans.append(root.val)
+            
+            root = root.right 
+        
+        return ans 
+    
+# 这个要结合灵神的图解来理解，看着图解一步步分析代码就懂了。 
+# 之后要学会直接想出这种可行的算法然后写出来。 
+
+# 时间复杂度O(n) 
+# 空间复杂度O(1) 
+
+# 2026.04.29 12:03 
