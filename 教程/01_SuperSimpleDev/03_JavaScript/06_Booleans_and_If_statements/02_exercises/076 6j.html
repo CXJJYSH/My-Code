@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <script>
+        const randomNumber = Math.random();
+        let result;
+        const guess = 'heads';
+
+        if (randomNumber < 0.5) {
+            result = 'heads';
+        } else {
+            result = 'tails';
+        }
+
+        // guess === result ? console.log('You win!') : console.log('You lose!');
+
+        console.log(guess === result ? 'You win!' : 'You lose!'); // condition ? A : B 
+        // Simon是这样写的，感觉这样写更符合逻辑一点。 
+    </script>
+</body>
+
+</html>
+
+<!-- 2026.05.07 17:34 -->
