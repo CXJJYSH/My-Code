@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <script>
+        function convertToFahrenheit(celsius) {
+            fahrenheit = (celsius * 9 / 5) + 32;
+            return fahrenheit;
+        }
+
+        function convertToCelsius(fahrenheit) {
+            celsius = (fahrenheit - 32) * 5 / 9;
+            return celsius;
+        }
+
+        function convertTemperature(degrees, unit) {
+            if (unit === 'C') {
+                return `${convertToFahrenheit(degrees)}F`;
+            } else if (unit === 'F') {
+                return `${convertToCelsius(degrees)}C`;
+            }
+        }
+
+        console.log(convertTemperature(25, 'C'));
+        console.log(convertTemperature(86, 'F'));
+    </script>
+</body>
+
+</html>
+
+<!-- Simon用了const存储前两个函数的调用结果，然后再用插入字符串返回答案。  -->
+<!-- 我没有多创建一个变量，直接放到插入字符串里返回了。  -->
+
+<!-- 2026.05.08 13:42 -->
