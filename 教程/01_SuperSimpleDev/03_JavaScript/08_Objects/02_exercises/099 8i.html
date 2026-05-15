@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <button onclick="
+        playGame('heads');    
+    ">
+        heads
+    </button>
+
+    <button onclick="
+        playGame('tails');
+    ">
+        tails
+    </button>
+
+    <script>
+        function playGame(guess) {
+            const randomNumber = Math.random();
+            const result = randomNumber < 0.5 ? 'heads' : 'tails';
+
+            console.log(guess === result ? 'You win!' : 'You lose!'); // condition ? A : B 
+
+            /*
+            if (randomNumber < 0.5) {
+                result = 'heads';
+            } else {
+                result = 'tails';
+            }
+            */
+
+            // guess === result ? console.log('You win!') : console.log('You lose!');
+            // 这是我写的。 
+
+            // console.log(guess === result ? 'You win!' : 'You lose!'); // condition ? A : B 
+            // Simon是这样写的，感觉这样写更符合逻辑一点。 
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- 2026.05.15 21:17 -->
