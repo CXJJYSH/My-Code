@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <input class="js-name-input" placeholder="Name">
+
+    <button onclick="
+        const text = document.querySelector('.js-name-input').value;
+        
+        document.querySelector('.js-message').innerHTML = `Your name is: ${text}`;
+    ">
+        Submit
+    </button>
+    <!-- 也可以text不赋成value，后面再调用text.value。 -->
+
+    <p class="js-message">
+
+    </p>
+</body>
+
+</html>
+
+<!-- 2026.05.18 22:11 -->

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <input class="js-name-input" placeholder="Name" onkeydown="
+        if (event.key === 'Enter') {
+            displayMessage();
+        }
+    ">
+
+    <button onclick="
+        displayMessage();
+    ">
+        Submit
+    </button>
+    <!-- 也可以text不赋成value，后面再调用text.value。 -->
+
+    <p class="js-message">
+
+    </p>
+
+    <script>
+        function displayMessage() {
+            const text = document.querySelector('.js-name-input').value;
+
+            document.querySelector('.js-message').innerHTML = `Your name is: ${text}`;
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- 2026.05.18 22:18 -->
