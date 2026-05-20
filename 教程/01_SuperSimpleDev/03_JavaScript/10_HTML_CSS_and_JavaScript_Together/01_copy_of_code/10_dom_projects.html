@@ -8,6 +8,10 @@
     </title>
 
     <style>
+        body {
+            font-family: Arial;
+        }
+
         .subscribe-button {
             border: none;
             background-color: black;
@@ -18,6 +22,28 @@
             padding-right: 15px;
             font-weight: bold;
             border-radius: 50px;
+            cursor: pointer;
+            margin-bottom: 30px;
+            /* 我下面注释掉margin-bottom也能保持底下的margin，是不是上面的style已经保留了，下面没覆盖就不会改变了？ */
+        }
+
+        .is-subscribed {
+            background-color: rgb(240, 240, 240);
+            color: black;
+            /* margin-bottom: 30px; */
+        }
+
+        .cost-input {
+            font-size: 15px;
+            padding: 10px;
+        }
+
+        .calculate-button {
+            background-color: green;
+            color: white;
+            border: none;
+            font-size: 15px;
+            padding: 12px 15px;
             cursor: pointer;
         }
     </style>
@@ -46,11 +72,11 @@
         Orders over $40 = FREE shipping.
     </p>
 
-    <input class="js-cost-input" placeholder="Cost of order" onkeydown="
+    <input class="js-cost-input cost-input" placeholder="Cost of order" onkeydown="
         handleCostKeydown(event);
     ">
 
-    <button onclick="
+    <button class="calculate-button" onclick="
         calculateTotal();
     ">
         Calculate
@@ -99,6 +125,7 @@
                 buttonElement.classList.add('is-subscribed');
             } else {
                 buttonElement.innerText = 'Subscribe';
+                buttonElement.classList.remove('is-subscribed');
             }
         }
     </script>
@@ -109,3 +136,5 @@
 <!-- 2026.05.19 17:40 -->
 
 <!-- 2026.05.19 23:35 -->
+
+<!-- 2026.05.20 23:12 -->
