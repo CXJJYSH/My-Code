@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        10d
+    </title>
+
+    <style>
+        .toggle-button {
+            background-color: rgb(230, 230, 230);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-right: 10px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .is-toggled {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="toggle-button gaming-button" onclick="
+        const button1 = document.querySelector('.gaming-button');
+        if (!button1.classList.contains('is-toggled')) {
+            button1.classList.add('is-toggled');
+        } else {
+            button1.classList.remove('is-toggled');
+        }
+    ">
+        Gaming
+    </button>
+
+    <button class="toggle-button music-button" onclick="
+            const button2 = document.querySelector('.music-button');
+            if (!button2.classList.contains('is-toggled')) {
+                button2.classList.add('is-toggled');
+            } else {
+                button2.classList.remove('is-toggled');
+            }
+        ">
+        Music
+    </button>
+
+    <button class="toggle-button tech-button" onclick="
+            const button3 = document.querySelector('.tech-button');
+            if (!button3.classList.contains('is-toggled')) {
+                button3.classList.add('is-toggled');
+            } else {
+                button3.classList.remove('is-toggled');
+            }
+        ">
+        Tech
+    </button>
+</body>
+
+</html>
+
+<!-- 2026.05.25 17:51 -->
+
+<!-- 2026.05.25 17:55 -->
