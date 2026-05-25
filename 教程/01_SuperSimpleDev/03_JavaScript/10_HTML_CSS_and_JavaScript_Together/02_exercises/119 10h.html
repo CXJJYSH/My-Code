@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        DOM Projects
+    </title>
+
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        .subscribe-button {
+            border: none;
+            background-color: black;
+            color: white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-bottom: 30px;
+            /* 我下面注释掉margin-bottom也能保持底下的margin，是不是上面的style已经保留了，下面没覆盖就不会改变了？ */
+        }
+
+        .is-subscribed {
+            background-color: rgb(240, 240, 240);
+            color: black;
+            /* margin-bottom: 30px; */
+        }
+
+        .cost-input {
+            font-size: 15px;
+            padding: 10px;
+        }
+
+        .calculate-button {
+            background-color: green;
+            color: white;
+            border: none;
+            font-size: 15px;
+            padding: 12px 15px;
+            cursor: pointer;
+        }
+
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        YouTube Subscribe Button
+    </p>
+
+    <button class="js-subscribe-button subscribe-button" onclick="
+        subscribe();
+    ">
+        Subscribe
+    </button>
+
+    <p>
+        Amazon Shipping Calculator
+    </p>
+
+    <p>
+        Orders under $40 = +$10 shipping.
+    </p>
+
+    <p>
+        Orders over $40 = FREE shipping.
+    </p>
+
+    <input class="js-cost-input cost-input" placeholder="Cost of order" onkeydown="
+        handleCostKeydown(event);
+    ">
+
+    <button class="calculate-button" onclick="
+        calculateTotal();
+    ">
+        Calculate
+    </button>
+
+    <p class="js-total-cost"></p>
+
+    <p class="js-error-message error-message"></p>
+
+    <script>
+        /*
+        String(25);
+        console.log('25' - 5);
+        console.log('25' + 5);
+        */
+
+        /*
+        window.document
+        window.console.log('window');
+        window.alert
+        */
+
+        function handleCostKeydown(event) {
+            if (event.key === 'Enter') {
+                calculateTotal();
+            }
+        }
+
+        function calculateTotal() {
+            const inputElement = document.querySelector('.js-cost-input');
+
+            let cost = Number(inputElement.value);
+
+            document.querySelector('.js-total-cost').innerHTML = '';
+            document.querySelector('.js-error-message').innerHTML = '';
+
+            if (cost < 0) {
+                document.querySelector('.js-error-message').innerHTML = 'Error: cost cannnot be less than $0';
+                return;
+            }
+
+            if (cost < 40) {
+                cost += 10;
+            }
+
+            document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
+        }
+
+        function subscribe() {
+            const buttonElement = document.querySelector('.js-subscribe-button');
+
+            if (buttonElement.innerText === 'Subscribe') {
+                buttonElement.innerText = 'Subcribed';
+                buttonElement.classList.add('is-subscribed');
+            } else {
+                buttonElement.innerText = 'Subscribe';
+                buttonElement.classList.remove('is-subscribed');
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- 2026.05.25 22:35 -->
