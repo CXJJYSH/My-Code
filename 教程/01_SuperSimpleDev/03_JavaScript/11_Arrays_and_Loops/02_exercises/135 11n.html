@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        11n
+    </title>
+</head>
+
+<body>
+    <script>
+        function countWords(words) {
+            const result = {};
+
+            for (let i = 0; i < words.length; i++) {
+                const word = words[i];
+
+                if (!result[word]) { // 这里如果不存在那个键，result[word]的结果实际上是undefined，可以在下面先用console.log(result[word])检验。 
+                    // console.log(result[word]);
+                    result[word] = 1;
+                } else {
+                    result[word] += 1;
+                }
+            }
+
+            return result;
+        }
+
+        console.log(countWords(['apple', 'grape', 'apple', 'apple']));
+    </script>
+</body>
+
+</html>
+
+<!-- 2026.05.26 21:04 -->

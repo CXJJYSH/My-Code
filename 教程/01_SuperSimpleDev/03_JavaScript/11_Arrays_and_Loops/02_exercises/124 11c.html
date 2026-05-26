@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+
+    </title>
+</head>
+
+<body>
+    <script>
+        function arraySwap(array) {
+            const lastIndex = array.length - 1;
+
+            const lastValue = array[lastIndex];
+            const firstValue = array[0];
+
+            array[0] = lastValue;
+            array[lastIndex] = firstValue;
+
+            return array;
+        }
+
+        console.log(arraySwap([1, 20, 22, 24, 5]));
+        console.log(arraySwap(['hi', 'hello', 'hey']));
+    </script>
+</body>
+
+</html>
+
+<!-- 2026.05.26 19:54 -->
