@@ -6,6 +6,8 @@
     <title>
         Todo List
     </title>
+
+    <link rel="stylesheet" href="styles/11_todo_list.css">
 </head>
 
 <body>
@@ -13,17 +15,19 @@
         Todo List
     </p>
 
-    <input class="js-name-input" placeholder="Todo name">
+    <div class="todo-input-grid">
+        <input class="js-name-input name-input" placeholder="Todo name">
 
-    <button onclick="
-        addTodo();
-    ">
-        Add
-    </button>
+        <input class="js-due-date-input due-date-input" type="date">
 
-    <div class="js-todo-list">
-        text
+        <button class="add-todo-button" onclick="
+            addTodo();
+        ">
+            Add
+        </button>
     </div>
+
+    <div class="js-todo-list todo-grid"></div>
 
     <script src="scripts/11_todo_list.js"></script>
 </body>
@@ -33,3 +37,5 @@
 <!-- 2026.05.26 16:09 -->
 
 <!-- 2026.05.26 17:26 -->
+
+<!-- 2026.05.28 18:04 -->
