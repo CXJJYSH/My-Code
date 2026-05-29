@@ -1,4 +1,4 @@
-public class multiplication_table {
+public class S02multiplication_table {
     public class LowerTriangleMultiplicationTable {
         public static void main(String[] args) {
             for (int i = 0; i <= 9; i++) {
@@ -16,4 +16,4 @@ public class multiplication_table {
     }
 }
 
-// 2026 05 28 11:13
+// 2026.05.29 11:13
