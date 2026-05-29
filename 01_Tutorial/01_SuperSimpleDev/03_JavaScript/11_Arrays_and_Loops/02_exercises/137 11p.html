@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        11o
+    </title>
+</head>
+
+<body>
+    <script>
+        const array1 = ['hello', 'world', 'search', 'good'];
+        const array2 = ['not', 'found'];
+
+        let index = -1;
+
+        for (let i = 0; i < array1.length; i++) {
+            if (array1[i] === 'search') {
+                index = i;
+            }
+        }
+
+        console.log(index);
+
+        index = -1;
+
+        for (let i = 0; i < array2.length; i++) {
+            if (array2[i] === 'search') {
+                index = i;
+            }
+        }
+
+        console.log(index);
+
+        const array3 = ['hello', 'world', 'search', 'good', 'search'];
+
+        index = -1;
+
+        for (let i = 0; i < array3.length; i++) {
+            if (array3[i] === 'search') {
+                index = i;
+                break;
+            }
+        }
+
+        console.log(index);
+    </script>
+</body>
+
+</html>
+
+<!-- 2026.05.29 22:31 -->

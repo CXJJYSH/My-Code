@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        11s
+    </title>
+</head>
+
+<body>
+    <script>
+        function removeEgg(foods) {
+            const result = [];
+            let eggRemoved = 0;
+
+            for (let i = 0; i < foods.length; i++) {
+                if (foods[i] === 'egg' && eggRemoved < 2) {
+                    eggRemoved += 1;
+                    continue;
+                } else {
+                    result.push(foods[i]);
+                }
+                // 依旧可以不写else直接接着return。 
+            }
+
+            return result;
+        }
+
+        console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+    </script>
+</body>
+
+</html>
+
+<!-- 2026.05.29 22:42 -->
+
+<!-- 2026.05.29 22:47 -->

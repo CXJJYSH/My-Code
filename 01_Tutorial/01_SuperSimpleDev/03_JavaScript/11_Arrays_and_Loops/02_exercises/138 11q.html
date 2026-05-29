@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        11q
+    </title>
+</head>
+
+<body>
+    <script>
+        function findIndex(array, word) {
+            let index = -1;
+
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] === word) {
+                    index = i;
+                    break;
+                }
+            }
+
+            console.log(index);
+        }
+
+        findIndex(['green', 'red', 'blue', 'red'], 'red');
+        findIndex(['green', 'red', 'blue', 'red'], 'yellow');
+    </script>
+</body>
+
+</html>
+
+<!-- 2026.05.29 22:35 -->
+
+<!-- Simon的写法 -->
+
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <script>
+        function findIndex(array, word) {
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] === word) {
+                    // Instead of creating an accumulator
+                    // variable and updating it in the loop,
+                    // we can just return i directly, when
+                    // we find it since this is a function.
+                    return i;
+                }
+            }
+
+            // If the function has not returned by now,
+            // logically that means the word must not
+            // exist in the array, so we'll return -1.
+            return -1;
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- 2026.05.29 22:44 -->

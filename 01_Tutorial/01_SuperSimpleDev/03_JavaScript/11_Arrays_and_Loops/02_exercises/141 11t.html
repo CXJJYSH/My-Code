@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        11t
+    </title>
+</head>
+
+<body>
+    <script>
+        function removeEgg(foods) {
+            foods.reverse();
+            const result = [];
+            let eggRemoved = 0;
+
+            for (let i = 0; i < foods.length; i++) {
+                if (foods[i] === 'egg' && eggRemoved < 2) {
+                    eggRemoved += 1;
+                    continue;
+                } else {
+                    result.push(foods[i]);
+                }
+                // 依旧可以不写else直接接着return。 
+            }
+
+            return result.reverse(); // 可以原地reverse()，也可以用一个新的变量存储反转之后的字符串。 
+        }
+
+        console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+    </script>
+</body>
+
+</html>
+
+<!-- Simon的写法 -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head></head>
+
+<body>
+    <script>
+        function removeEgg(foods) {
+            // To remove the last 2 'egg', reverse the array first.
+            const reversedFoods = foods.reverse();
+
+            const result = [];
+            let eggsRemoved = 0;
+
+            for (let i = 0; i < reversedFoods.length; i++) {
+                if (reversedFoods[i] === 'egg' && eggsRemoved < 2) {
+                    eggsRemoved++;
+                    continue;
+                }
+
+                result.push(reversedFoods[i]);
+            }
+
+            // At the end, remember to .reverse() back the result.
+            return result.reverse();
+        }
+
+        console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+    </script>
+</body>
+
+</html>
+
+<!-- 2026.05.29 22:52 -->
