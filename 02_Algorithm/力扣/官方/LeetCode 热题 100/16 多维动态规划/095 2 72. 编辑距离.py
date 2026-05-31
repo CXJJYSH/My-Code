@@ -51,3 +51,7 @@ class Solution:
 # https://leetcode.cn/problems/edit-distance/solutions/2133222/jiao-ni-yi-bu-bu-si-kao-dong-tai-gui-hua-uo5q/?envType=study-plan-v2&envId=top-100-liked 
 
 # 2026.05.30 17:01 
+
+# 2026.05.31 今天考了信号与系统和软件工程导论。考完就去玩了，没写代码。 
+
+# 2026.05.31 23:27 
