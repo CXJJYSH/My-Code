@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        Advanced Functions
+    </title>
+</head>
+
+<body>
+    <script>
+        /*
+        function greeting() {
+            console.log('hello');
+        }
+        greeting();
+
+        // Functions are values. 
+
+        // Below is an anonymous function, which means a function without a name. 
+        const function1 = function () {
+            console.log('hello2');
+        };
+
+        console.log(function1);
+        console.log(typeof function1);
+        function1();
+
+        const object1 = {
+            num: 2,
+            fun: function () {
+                console.log('hello3');
+            } // A method, which means a function saved inside an object. 
+        };
+        object1.fun();
+
+        function display(param) {
+            console.log(param);
+        }
+        display(2); // Pasting a value into a function. 
+
+        // We can also pass a function into a function. 
+        function run(param) {
+            param();
+        }
+        run(function () {
+            console.log('hello4');
+        }); // Passing a function into another function. 
+        // The functin we are passing in is called a callback function, or a callback. 
+
+        // Functions are values. Anything we can do with a value, we can also do with a function.
+
+        // Practical examples.
+        // setTimeout()
+        // - allows us to run a function in the future. 
+        */
+
+        // setTimeout() is a build-in function.
+        // The first parameter is a function we want to run in the future. 
+        // The second parameter is how long to wait before running this function.(A number in milliseconds/ms) 
+        setTimeout(function () {
+            console.log('timeout');
+        },);
+    </script>
+</body>
+
+</html>
+
+<!-- 2026.06.01 20:56 -->
