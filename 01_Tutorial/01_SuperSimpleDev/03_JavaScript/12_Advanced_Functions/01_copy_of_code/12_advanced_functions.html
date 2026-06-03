@@ -92,8 +92,23 @@
         });
         // .forEach() is the preferred way to loop through an array. 
 
-        // Practical example using .forEach() 
+        // Practical example using .forEach()
+        // 12_todo_list.js 
 
+        // If we want to continue, use "return". 
+        [
+            'make dinner',
+            'wash dishes',
+            'watch youtube'
+        ].forEach(function (value, index) {
+            if (value === 'wash dishes') {
+                return;
+            }
+            console.log(index);
+            console.log(value);
+        });
+
+        // If we want to break, it's better to use a regular "for" loop. 
     </script>
 </body>
 
