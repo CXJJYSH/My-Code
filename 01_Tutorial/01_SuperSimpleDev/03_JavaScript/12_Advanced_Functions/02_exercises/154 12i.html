@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        App
+    </title>
+</head>
+
+<body>
+    <button onclick="
+        messages += 1;
+    ">
+        Add
+    </button>
+
+    <button onclick="
+        if (messages > 0) {
+            messages -= 1;
+        }
+    ">
+        Remove
+    </button>
+
+    <script>
+        let messages = 2;
+
+        setInterval(function () {
+            if (document.title === 'App' && messages > 0) {
+                document.title = `(${messages}) new messages`;
+            } else {
+                document.title = 'App';
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>
+
+<!-- 下面是Simon的代码，这一次我反而觉得我写的更好，更简洁。 -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>App</title>
+</head>
+
+<body>
+    <!--
+      Note: This is just a sample solution. Other
+      solutions are possible so don't worry if
+      your solution looks different.
+    -->
+    <button onclick="
+      messages2++;
+      displayNotification();
+    ">Add</button>
+
+    <button onclick="
+      if (messages2 > 0) {
+        messages2--;
+
+        // If there are no new messages, stop displaying
+        // the notification in the tab.
+        if (messages2 === 0) {
+          stopNotification();
+        }
+      }
+    ">Remove</button>
+
+    <script>
+        let messages2 = 2;
+
+        // Save the intervalId in case we need to cancel it.
+        let intervalId;
+
+        // We'll use this variable to keep track of whether
+        // or not we're displaying the notification.
+        let isDisplayingNotification;
+
+        // Start displaying the notification in the tab
+        // when the page first loads.
+        displayNotification();
+
+        function displayNotification() {
+            // If we're already displaying the notification,
+            // stop this function because we don't want to
+            // create 2 intervals at the same time.
+            if (isDisplayingNotification) {
+                return;
+            }
+
+            isDisplayingNotification = true;
+
+            intervalId = setInterval(function () {
+                if (document.title === 'App') {
+                    document.title = `(${messages2}) New messages`;
+                } else {
+                    document.title = 'App';
+                }
+            }, 1000);
+        }
+
+        function stopNotification() {
+            isDisplayingNotification = false;
+
+            clearInterval(intervalId);
+            document.title = 'App';
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- 2026.06.03 17:49 -->

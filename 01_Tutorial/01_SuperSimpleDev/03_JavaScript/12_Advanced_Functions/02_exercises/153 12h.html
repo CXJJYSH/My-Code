@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        App
+    </title>
+</head>
+
+<body>
+    <button onclick="
+        messages += 1;
+    ">
+        Add
+    </button>
+
+    <button onclick="
+        messages -= 1;
+    ">
+        Remove
+    </button>
+
+    <script>
+        let messages = 2;
+
+        setInterval(function () {
+            if (document.title === 'App') {
+                document.title = `(${messages}) new messages`;
+            } else {
+                document.title = 'App';
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>
+
+<!-- 2026.06.03 17:41 -->

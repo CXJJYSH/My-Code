@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        12c
+    </title>
+</head>
+
+<body>
+    <button class="start-button" onclick="
+        document.querySelector('.start-button').innerHTML = 'Loading...'; // 这一行写在上面或者写在下面都可以。 
+        setTimeout(changeText, 1000);
+        // document.querySelector('.start-button').innerHTML = 'Loading...';
+    ">
+        Start
+    </button>
+
+    <script>
+        function changeText() {
+            document.querySelector('.start-button').innerHTML = 'Finished!';
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- 2026.06.03 14:48 -->

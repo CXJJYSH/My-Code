@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        12c
+    </title>
+</head>
+
+<body>
+    <button class="start-button" onclick="
+        setTimeout(changeText, 1000);
+    ">
+        Start
+    </button>
+
+    <script>
+        function changeText() {
+            document.querySelector('.start-button').innerHTML = 'Finished!';
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- 下面是Simon的代码。 -->
+
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <button class="js-button" onclick="
+      updateButton();
+    ">Start</button>
+
+    <script>
+        // Grouping the JavaScript code into a function
+        // is optional, but it is a bit cleaner.
+        function updateButton() {
+            const button = document.querySelector('.js-button');
+
+            setTimeout(function () {
+                button.innerHTML = 'Finished!';
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- 2026.06.03 14:42 -->
