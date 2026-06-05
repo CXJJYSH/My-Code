@@ -9,9 +9,12 @@ updateScoreElement();
 let isAutoPlaying = false;
 let intervalId;
 
+// function autoPlay() {}
+// 1. Easier to read
+// 2. Hoisting
 function autoPlay() {
   if (!isAutoPlaying) {
-    intervalId = setInterval(function () {
+    intervalId = setInterval(() => {
       const playerMove = pickComputerMove();
       playGame(playerMove);
     }, 1000);
@@ -22,6 +25,40 @@ function autoPlay() {
     isAutoPlaying = false;
   }
 }
+
+document.querySelector(".js-rock-button").addEventListener("click", () => {
+  playGame("rock");
+});
+
+document.querySelector(".js-paper-button").addEventListener("click", () => {
+  playGame("paper");
+});
+
+document.querySelector(".js-scissors-button").addEventListener("click", () => {
+  playGame("scissors");
+});
+
+document.querySelector(".js-reset-button").addEventListener("click", () => {
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+  localStorage.removeItem("score");
+  updateScoreElement();
+});
+
+document.querySelector(".js-auto-button").addEventListener("click", () => {
+  autoPlay();
+});
+
+document.body.addEventListener("keydown", (event) => {
+  if (event.key === "r") {
+    playGame("rock");
+  } else if (event.key === "p") {
+    playGame("paper");
+  } else if (event.key === "s") {
+    playGame("scissors");
+  }
+});
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
@@ -98,3 +135,9 @@ function pickComputerMove() {
 // 2026.05.21 23:25
 
 // 2026.06.02 23:37
+
+// 2026.06.05 11:38
+
+// 2026.06.06 12:20
+
+// 2026.06.05 22:15

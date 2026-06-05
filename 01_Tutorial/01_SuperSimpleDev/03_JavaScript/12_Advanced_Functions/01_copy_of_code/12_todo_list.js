@@ -14,7 +14,7 @@ renderTodoList();
 function renderTodoList() {
   let todoListHTML = "";
 
-  todoList.forEach(function (todoObject, index) {
+  todoList.forEach((todoObject, index) => {
     const { name, dueDate } = todoObject;
 
     const html = `
@@ -26,10 +26,7 @@ function renderTodoList() {
         ${dueDate}
       </div>
 
-      <button class="delete-todo-button" onclick="
-        todoList.splice(${index}, 1);
-        renderTodoList();
-      ">
+      <button class="delete-todo-button js-delete-todo-button">
         Delete
       </button>
     `; // 这里每次删完一个都会重新运行一遍显示待办的函数，重新给待办排序，所以保证了删除按钮的可行性和正确性。
@@ -40,7 +37,28 @@ function renderTodoList() {
   // console.log(todoListHTML);
 
   document.querySelector(".js-todo-list").innerHTML = todoListHTML;
+
+  // Problem 1
+  // The code of the delete button are just strings.
+  // Problem 2
+  // We have nultiple delete buttons.
+  // document.querySelector just gives us the first js-delete button.
+  // forEach()
+  // 1. The value
+  // 2. The index
+  document
+    .querySelectorAll(".js-delete-todo-button")
+    .forEach((deleteButton, index) => {
+      deleteButton.addEventListener("click", () => {
+        todoList.splice(index, 1);
+        renderTodoList();
+      });
+    });
 }
+
+document.querySelector(".js-add-todo-button").addEventListener("click", () => {
+  addTodo();
+});
 
 function addTodo() {
   const inputElement = document.querySelector(".js-name-input");
@@ -64,3 +82,7 @@ function addTodo() {
 }
 
 // 2026.06.03 14:17
+
+// 2026.06.05 11:41
+
+// 2026.06.05 22:40
