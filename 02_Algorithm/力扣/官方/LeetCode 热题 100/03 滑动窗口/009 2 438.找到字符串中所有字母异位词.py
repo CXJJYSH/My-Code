@@ -1,4 +1,8 @@
 from collections import defaultdict
+from typing import Counter, List
+
+# 2025.10.20 
+# 2025.10.21 
 
 class Solution:
     def findAnagrams(self, s: str, p: str) -> list[int]:
@@ -57,6 +61,60 @@ class Solution:
                 ans.append(left)
         return ans
         '''
-        # 2025.10.20 23:58 
+# 2025.10.20 23:58 
 
-#2025.10.21 15:52
+# 2025.10.21 15:52 
+
+# 2026.06.10 
+
+# 定长滑窗 
+
+class Solution:
+    def findAnagrams(self, s: str, p: str) -> List[int]:
+        cnt_p = Counter(p)
+        cnt_s = Counter()
+
+        ans = []
+
+        for right, c in enumerate(s):
+            cnt_s[c] += 1
+            
+            left = right - len(p) + 1
+            if left < 0:
+                continue 
+            
+            if cnt_s == cnt_p:
+                ans.append(left)
+            cnt_s[s[left]] -= 1
+
+        return ans 
+    
+# 时间复杂度O(U * m + n) 
+# 空间复杂度O(U) 
+    
+# 2026.06.10 12:14 
+
+# 不定长滑窗 
+
+class Solution:
+    def findAnagrams(self, s: str, p: str) -> List[int]:
+        ans = []
+
+        cnt = Counter(p) 
+
+        left = 0
+        for right, c in enumerate(s):
+            cnt[c] -= 1
+            while cnt[c] < 0:
+                cnt[s[left]] += 1
+                left += 1
+
+            if right - left + 1 == len(p):
+                ans.append(left) 
+
+        return ans 
+    
+# 时间复杂度O(m + n) 
+# 空间复杂度O(U) 
+
+# 2026.06.10 12:21 
