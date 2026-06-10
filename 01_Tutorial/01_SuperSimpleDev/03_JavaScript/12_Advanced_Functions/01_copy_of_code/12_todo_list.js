@@ -50,6 +50,7 @@ function renderTodoList() {
     .querySelectorAll(".js-delete-todo-button")
     .forEach((deleteButton, index) => {
       deleteButton.addEventListener("click", () => {
+        // console.log(index);
         todoList.splice(index, 1);
         renderTodoList();
       });
@@ -86,3 +87,5 @@ function addTodo() {
 // 2026.06.05 11:41
 
 // 2026.06.05 22:40
+
+// 2026.06.10 23:24
