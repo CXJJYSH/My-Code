@@ -42,3 +42,5 @@ if __name__ == "__main__":
 
     target = 54
     print(f"\n查找 {target}:", "存在" if ht.search(target) else "不存在")
+
+# 2026.06.10 10:24 验完了 

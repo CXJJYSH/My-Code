@@ -35,3 +35,5 @@ if __name__ == "__main__":
         print(f"元素 {target} 在第 {pos} 位")
     else:
         print(f"元素 {target} 不存在")
+
+# 2026.06.10 10:24 验完了 

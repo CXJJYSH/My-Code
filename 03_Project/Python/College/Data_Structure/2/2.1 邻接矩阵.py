@@ -79,3 +79,5 @@ g.add_edge(2, 4, 40)
 
 print("BFS:", g.BFS(0))
 print("DFS:", g.DFS(0))
+
+# 2026.06.10 10:24 验完了 

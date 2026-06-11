@@ -56,3 +56,5 @@ if __name__ == "__main__":
 
     print("原始序列:", data)
     print("二叉排序树中序遍历结果:", bst.inorder())
+
+# 2026.06.10 10:24 验完了 
