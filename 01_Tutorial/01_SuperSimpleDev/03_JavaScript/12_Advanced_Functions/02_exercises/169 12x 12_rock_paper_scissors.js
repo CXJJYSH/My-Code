@@ -45,7 +45,7 @@ document.querySelector(".js-scissors-button").addEventListener("click", () => {
 document
   .querySelector(".js-reset-score-button")
   .addEventListener("click", () => {
-    resetScore();
+    showResetConfirmation();
   });
 
 document.querySelector(".js-auto-play-button").addEventListener("click", () => {
@@ -62,9 +62,40 @@ document.body.addEventListener("keydown", (event) => {
   } else if (event.key === "a") {
     autoPlay();
   } else if (event.key === "Backspace") {
-    resetScore();
+    showResetConfirmation();
   }
 });
+
+function showResetConfirmation() {
+  document.querySelector(".js-reset-confirmation").innerHTML = `
+  Are you sure you want to reset the score?
+
+  <button class='js-reset-confirm-yes reset-confirm-button'>
+    Yes
+  </button>
+  
+  <button class='js-reset-confirm-no reset-confirm-button'>
+    No
+  </button>
+  `;
+
+  document
+    .querySelector(".js-reset-confirm-yes")
+    .addEventListener("click", () => {
+      resetScore();
+      hideResetConfirmation();
+    });
+
+  document
+    .querySelector(".js-reset-confirm-no")
+    .addEventListener("click", () => {
+      hideResetConfirmation();
+    });
+}
+
+function hideResetConfirmation() {
+  document.querySelector(".js-reset-confirmation").innerHTML = "";
+}
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
@@ -166,3 +197,7 @@ function resetScore() {
 // 2026.06.11 11:46
 
 // 2026.06.11 12:00
+
+// 2026.06.11 23:28
+
+// 2026.06.11 23:43
