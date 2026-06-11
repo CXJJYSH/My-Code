@@ -61,6 +61,8 @@ document.body.addEventListener("keydown", (event) => {
     playGame("scissors");
   } else if (event.key === "a") {
     autoPlay();
+  } else if (event.key === "Backspace") {
+    resetScore();
   }
 });
 
@@ -163,4 +165,4 @@ function resetScore() {
 
 // 2026.06.11 11:46
 
-// 2026.06.11 11:58
+// 2026.06.11 12:00
