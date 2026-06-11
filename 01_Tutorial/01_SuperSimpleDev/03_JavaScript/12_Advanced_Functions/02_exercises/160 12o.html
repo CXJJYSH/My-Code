@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        12o
+    </title>
+</head>
+
+<body>
+    <script>
+        function removeEgg(foods) {
+            let eggsRemoved = 0;
+
+            return foods.filter((food) => {
+                if (food === 'egg' && eggsRemoved < 2) {
+                    eggsRemoved += 1;
+                    return false;
+                } else {
+                    return true;
+                }
+            })
+        }
+
+        console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+    </script>
+</body>
+
+</html>
+
+<!-- 2026.06.11 11:02 -->

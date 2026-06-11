@@ -27,6 +27,7 @@
 <!-- 下面是Simon的代码。 -->
 
 <!DOCTYPE html>
+
 <html>
 
 <head></head>
@@ -42,7 +43,8 @@
         function updateButton() {
             const button = document.querySelector('.js-button');
 
-            setTimeout(function () {
+            // The function below was changed to an arrow function. 
+            setTimeout(() => {
                 button.innerHTML = 'Finished!';
             }, 1000);
         }
@@ -52,3 +54,29 @@
 </html>
 
 <!-- 2026.06.03 14:42 -->
+
+<!-- 2026.06.11 11:06 -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head></head>
+
+<body>
+    <button class="js-button">Start</button>
+
+    <script>
+        document.querySelector('.js-button').addEventListener('click', () => {
+            const button = document.querySelector('.js-button');
+
+            setTimeout(() => {
+                button.innerHTML = 'Finished!';
+            }, 1000);
+        })
+    </script>
+</body>
+
+</html>
+
+<!-- 2026.06.11 11:11 -->
