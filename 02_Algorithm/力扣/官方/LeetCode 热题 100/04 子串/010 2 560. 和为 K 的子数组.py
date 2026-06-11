@@ -33,3 +33,22 @@ class Solution:
 # 空间复杂度O(m)，字典长度。 
 
 # 2026.04.14 12:54 
+
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        s = [0] * (len(nums) + 1)
+        for i, x in enumerate(nums):
+            s[i + 1] = s[i] + x 
+        
+        cnt = defaultdict(int) 
+        ans = 0
+        for sj in s:
+            ans += cnt[sj - k]
+            cnt[sj] += 1
+        
+        return ans 
+    
+# 时间复杂度O(n) 
+# 空间复杂度O(n) 
+
+# 2026.06.11 16:28 
