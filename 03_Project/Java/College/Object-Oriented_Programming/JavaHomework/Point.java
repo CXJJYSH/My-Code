@@ -1,3 +1,5 @@
+// 温哲睿 2024201410 
+
 public class Point implements Draw {
     protected double x;
     protected double y;
