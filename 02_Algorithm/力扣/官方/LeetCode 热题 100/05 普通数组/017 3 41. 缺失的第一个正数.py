@@ -19,3 +19,29 @@ class Solution:
 # 空间复杂度O(1) 
 
 # 2026.04.17 12:01 
+
+# 奇巧算法 
+
+class Solution:
+    def firstMissingPositive(self, nums: List[int]) -> int:
+        n = len(nums) 
+
+        for i in range(n):
+            while 1 <= nums[i] <= n and nums[nums[i] - 1] != nums[i]:
+                j = nums[i] - 1
+                nums[i], nums[j] = nums[j], nums[i]
+        
+        for i in range(n):
+            if nums[i] != i + 1:
+                return i + 1 
+        
+        return n + 1 
+    
+# 时间复杂度O(n) 
+# 空间复杂度O(1) 
+
+# 2026.06.025 15:29 
+
+# 这次20分钟搞完了5道题，行，最好都要这么快。 
+
+# 2026.06.25 15:30 

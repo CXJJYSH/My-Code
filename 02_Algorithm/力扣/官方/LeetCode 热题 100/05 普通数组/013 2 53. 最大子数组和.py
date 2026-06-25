@@ -57,3 +57,23 @@ class Solution:
 # 空间复杂度O(1) 
 
 # 2026.04.16 12:16 
+
+# 2026.06.25 15:08 
+
+# 前缀和 
+
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        ans = -inf 
+
+        min_pre_sum = 0
+        pre_sum = 0
+        
+        for x in nums:
+            pre_sum += x
+            ans = max(ans, pre_sum - min_pre_sum)
+            min_pre_sum = min(min_pre_sum, pre_sum)
+        
+        return ans 
+    
+# 2026.06.25 15:09 

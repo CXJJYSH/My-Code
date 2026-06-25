@@ -26,3 +26,29 @@ class Solution:
 # 空间复杂度O(1) 
 
 # 2026.04.16 12:51 
+
+# 两次反转，“负负得正”。 
+
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        
+        def reverse(i, j):
+            while i < j:
+                nums[i], nums[j] = nums[j], nums[i]
+                i += 1
+                j -= 1
+            
+        n = len(nums)
+        k %= n 
+        reverse(0, n - 1)
+        reverse(0, k - 1) 
+        reverse(k, n - 1) 
+
+# 时间复杂度O(n) 
+# 空间复杂度O(1) 
+
+# 2026.06.25 15:17 
