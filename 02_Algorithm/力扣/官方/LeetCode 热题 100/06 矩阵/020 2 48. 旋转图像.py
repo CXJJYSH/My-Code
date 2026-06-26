@@ -31,3 +31,22 @@ class Solution:
 # 空间复杂度O(1) 
 
 # 2026.04.20 11:58 
+
+class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        
+        n = len(matrix)
+        for i in range(n):
+            for j in range(i):
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j] 
+        
+        for row in matrix:
+            row.reverse() 
+
+# 时间复杂度O(n ** 2) 
+# 空间复杂度O(1) 
+
+# 2026.06.26 22:05 

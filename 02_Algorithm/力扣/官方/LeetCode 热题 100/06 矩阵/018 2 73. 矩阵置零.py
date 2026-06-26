@@ -125,3 +125,22 @@ class Solution:
 # 还是第一种写法第一行和第一列单独修改的方法更容易懂和记住，而且比使用额外数组的方法优雅。 
 
 # 2026.04.17 14:35 
+
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        
+        row_has_zero = [0 in row for row in matrix]
+        col_has_zero = [0 in col for col in zip(*matrix)]
+
+        for i, row0 in enumerate(row_has_zero):
+            for j, col0 in enumerate(col_has_zero):
+                if row0 or col0:
+                    matrix[i][j] = 0
+
+# 时间复杂度O(m * n) 
+# 空间复杂度O(m + n) 
+
+# 2026.06.26 21:51 
