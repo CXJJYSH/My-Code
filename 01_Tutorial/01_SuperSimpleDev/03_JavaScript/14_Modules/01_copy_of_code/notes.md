@@ -17,3 +17,5 @@ Another syntax of import:
 `cartModule.addToCart('id');`
 cartModule is an object.
 We can access each import as a property or a method.
+
+Create the checkout page.
