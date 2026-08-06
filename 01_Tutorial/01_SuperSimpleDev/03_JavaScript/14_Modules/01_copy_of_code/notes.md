@@ -35,3 +35,5 @@ Steps:
 2. Use .remove() method
 
 How do we know which element to get?
+
+Add localStorage to the Cart
