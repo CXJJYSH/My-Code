@@ -37,3 +37,13 @@ Steps:
 How do we know which element to get?
 
 Add localStorage to the Cart
+
+In this lesson:
+
+1. Modules = better way to organize our code
+2. Created the checkout page
+3. HTML link elements and radio selectors
+4. Made the delete link interactive
+5. Saved the cart in localStorage
+
+<!-- 2026.08.06 17:04 -->
