@@ -19,3 +19,12 @@ cartModule is an object.
 We can access each import as a property or a method.
 
 Create the checkout page.
+
+1. Remove the product from the cart
+2. Update the HTML
+
+How do we remove a productId from the cart?
+
+1. Create a new array
+2. Loop through the cart
+3. Add each product to the new array, except for this productId
