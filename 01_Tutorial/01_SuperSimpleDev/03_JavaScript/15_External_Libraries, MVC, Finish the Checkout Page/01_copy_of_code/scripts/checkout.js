@@ -7,6 +7,10 @@ import {
 import { products } from "../data/products.js";
 import { formatCurrency } from "./utils/money.js";
 
+hello();
+
+console.log(dayjs());
+
 let cartSummaryHTML = "";
 
 cart.forEach((cartItem) => {
