@@ -77,7 +77,7 @@ export function updateQuantity(productId, newQuantity) {
     }
   });
 
-  matchingItem.quantity = newQuantity;
+  matchingItem.quantity = newQuantity; // 这里不是复制出一个新的对象，而是让matchingItem指向同一个对象。
 
-  saveToStorage();
+  saveToStorage(); // 这个是另外编写的一个函数，不是JS内置的。
 }
