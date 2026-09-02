@@ -80,6 +80,8 @@ function updateCartQuantity() {
   document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
 }
 
+updateCartQuantity();
+
 document.querySelectorAll(".js-add-to-cart").forEach((button) => {
   // This solution uses a feature of JavaScript called a
   // closure. Each time we run the loop, it will create
