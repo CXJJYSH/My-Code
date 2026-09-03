@@ -49,3 +49,18 @@ Then we should use ESM Version of the external libraries.
 ESM = EcmaScript Module
 (EcmaScript = JavaScript)
 A version that works with JavaScript Modules.
+
+<!-- 2026.09.03 16:20 -->
+
+Default Export
+
+- another way of exporting
+- we can use it when we only want to export 1 thing
+
+Each file can only have 1 default export
+
+It's up to me which version of export I want to use.
+
+For some external libraries, we still have to use script tags.
+
+<!-- 2026.09.03 16:28 -->
