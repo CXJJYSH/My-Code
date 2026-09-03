@@ -25,3 +25,27 @@ DayJS external library
 DayJS documentation(link in description)
 
 <!-- 2026.09.02 23:33 -->
+
+Best Practicee:
+When we need something complicated,
+
+- Try to find an external library first.
+- Before writing the code ourselves.
+
+How to find external libraries:
+
+- Search in Google
+- Use an AI tool
+
+External Libraries + JavaScript Modules
+
+The problem with script tags is that they run these code directly on the page, and this might cause naming conflicts.
+
+Such as the hello() in Hello external library.
+
+It is better to use JavaScript modules, because a module will contain the code inside a file, and any variables that created inside the file will not conflict with anything outside of the file.
+
+Then we should use ESM Version of the external libraries.
+ESM = EcmaScript Module
+(EcmaScript = JavaScript)
+A version that works with JavaScript Modules.
