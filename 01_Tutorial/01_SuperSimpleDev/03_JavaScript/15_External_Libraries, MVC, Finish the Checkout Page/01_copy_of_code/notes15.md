@@ -70,3 +70,12 @@ Main Idea of JavaScript
 1. Save the data
 2. Generate the HTML
 3. Make it interactive
+
+<!-- 2026.09.03 19:11 -->
+
+Update the page
+Problem: we need to update the page one-by-one
+
+The old HTML is replaced by the new HTML, so we should add event listeners again.
+
+A function can call / re-run itself.
