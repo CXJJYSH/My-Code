@@ -64,3 +64,9 @@ It's up to me which version of export I want to use.
 For some external libraries, we still have to use script tags.
 
 <!-- 2026.09.03 16:28 -->
+
+Main Idea of JavaScript
+
+1. Save the data
+2. Generate the HTML
+3. Make it interactive
