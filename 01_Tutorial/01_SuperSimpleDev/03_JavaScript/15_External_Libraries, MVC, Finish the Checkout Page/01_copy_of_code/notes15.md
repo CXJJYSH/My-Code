@@ -97,3 +97,14 @@ Split our code into 3 parts
 MVC = makes sure the page always matches the data
 
 MVC is a design pattern.
+
+In this lesson:
+
+1. External libraries = code outside of our project
+2. DayJS external library
+3. External libraries + JavaScript Modules, default export
+4. Created the delivery section
+5. MVC = Model - View - Controller
+6. Created the payment section
+
+<!-- 2026.09.03 21:10 -->
