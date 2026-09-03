@@ -79,3 +79,21 @@ Problem: we need to update the page one-by-one
 The old HTML is replaced by the new HTML, so we should add event listeners again.
 
 A function can call / re-run itself.
+
+<!-- 2026.09.03 19:24 -->
+
+1. Update the data
+2. Regenerate all the HTML
+   = MVC
+   Model - View - Controller
+
+MVC
+Split our code into 3 parts
+
+1. Model = saves and manages the data
+2. View = takes the data and displays it on the page
+3. Controller = runs some code when we interact with the page
+
+MVC = makes sure the page always matches the data
+
+MVC is a design pattern.
