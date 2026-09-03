@@ -84,3 +84,17 @@ export function updateQuantity(productId, newQuantity) {
 
   saveToStorage(); // 这个是另外编写的一个函数，不是JS内置的。
 }
+
+export function updateDeliveryOption(productId, deliveryOptionId) {
+  let matchingItem;
+
+  cart.forEach((cartItem) => {
+    if (productId === cartItem.productId) {
+      matchingItem = cartItem;
+    }
+  });
+
+  matchingItem.deliveryOptionId = deliveryOptionId;
+
+  saveToStorage();
+}
