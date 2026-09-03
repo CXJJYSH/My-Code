@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+
+<head></head>
+
+<body>
+    <script type="module">
+        import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
+
+        const today = dayjs();
+        const date = today.add(1, 'month'); // 这里用month或months都行。
+        console.log(date.format('MMMM D'));
+    </script>
+</body>
+
+</html>
+
+<!-- 2026.09.03 21:26 -->
