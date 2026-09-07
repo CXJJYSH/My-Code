@@ -34,19 +34,12 @@ export function addToCart(productId) {
     }
   });
 
-  const quantitySelector = document.querySelector(
-    `.js-quantity-selector-${productId}`,
-  );
-
-  const quantity = Number(quantitySelector.value);
-
   if (matchingItem) {
-    matchingItem.quantity += quantity;
+    matchingItem.quantity += 1;
   } else {
     cart.push({
-      productId,
-      quantity,
-      // Shorthand property
+      productId: productId,
+      quantity: 1,
       deliveryOptionId: "1",
     });
   }
@@ -56,6 +49,7 @@ export function addToCart(productId) {
 
 export function removeFromCart(productId) {
   const newCart = [];
+
   cart.forEach((cartItem) => {
     if (cartItem.productId !== productId) {
       newCart.push(cartItem);
@@ -65,30 +59,6 @@ export function removeFromCart(productId) {
   cart = newCart;
 
   saveToStorage();
-}
-
-export function calculateCartQuantity() {
-  let cartQuantity = 0;
-
-  cart.forEach((cartItem) => {
-    cartQuantity += cartItem.quantity;
-  });
-
-  return cartQuantity;
-}
-
-export function updateQuantity(productId, newQuantity) {
-  let matchingItem;
-
-  cart.forEach((cartItem) => {
-    if (productId === cartItem.productId) {
-      matchingItem = cartItem;
-    }
-  });
-
-  matchingItem.quantity = newQuantity; // 这里不是复制出一个新的对象，而是让matchingItem指向同一个对象。
-
-  saveToStorage(); // 这个是另外编写的一个函数，不是JS内置的。
 }
 
 export function updateDeliveryOption(productId, deliveryOptionId) {
@@ -104,3 +74,5 @@ export function updateDeliveryOption(productId, deliveryOptionId) {
 
   saveToStorage();
 }
+
+// 2026.09.07 18:00

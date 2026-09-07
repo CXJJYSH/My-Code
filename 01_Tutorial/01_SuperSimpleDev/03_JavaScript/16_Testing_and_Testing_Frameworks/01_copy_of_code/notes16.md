@@ -60,3 +60,23 @@ MochaJS
 Run tests using Jasmine
 
 Write tests using Jasmine
+
+Test a different function using Jasmine
+
+Match the folder structure of the code
+
+Best Practicce:
+Test each condition of an if-statement
+
+Test Coverage
+= how much of the code is being tested
+(Try to maximize test coverage)
+
+Flaky Test = test that sometimes passes and sometimes fails
+
+Mocks
+= lets us replace a method with a fake version
+
+spyOn() records every time a method is used
+
+1 mock only lasts for 1 test
