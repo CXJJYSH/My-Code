@@ -1,3 +1,5 @@
+**Testing**
+
 If I get an error, but my code looks correct, I may have some bad data saved in localStorage.
 
 Try running:
@@ -38,3 +40,19 @@ Give each test a name
 Group related tests together
 
 group of related tests = test suite
+
+**Testing Framework**
+
+Testing Framework
+= external library that helps us write tests easier
+
+1. Create test suite
+2. Create tests
+3. Compare values and display result
+
+The first testing framework I'm going to learn: Jasmine
+
+Most testing frameworks are similar.
+Other testing frameworks:
+Jest (for ReactJS)
+MochaJS
