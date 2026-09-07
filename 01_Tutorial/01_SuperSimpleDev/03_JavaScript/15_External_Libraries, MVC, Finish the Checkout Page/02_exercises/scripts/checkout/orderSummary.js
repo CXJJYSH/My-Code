@@ -180,13 +180,19 @@ export function renderOrderSummary() {
 
       container.classList.remove("is-editing-quantity");
 
-      const quantityLabel = document.querySelector(
-        `.js-quantity-label-${productId}`,
-      );
+      renderCheckoutHeader();
+      renderOrderSummary();
+      renderPaymentSummary();
 
-      quantityLabel.innerHTML = newQuantity;
+      // const quantityLabel = document.querySelector(
+      //   `.js-quantity-label-${productId}`,
+      // );
 
-      updateCartQuantity();
+      // quantityLabel.innerHTML = newQuantity;
+
+      // updateCartQuantity();
+
+      // 这一段在15n被删掉。
     });
   });
 
@@ -248,3 +254,5 @@ export function renderOrderSummary() {
 // 2026.09.07 11:51
 
 // 2026.09.07 12:03
+
+// 2026.09.07 14:23
