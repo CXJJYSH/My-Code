@@ -16,6 +16,7 @@ import {
   getDeliveryOption,
 } from "../../data/deliveryOptions.js";
 import { renderPaymentSummary } from "./paymentSummary.js";
+import { renderCheckoutHeader } from "./checkoutHeader.js";
 
 export function renderOrderSummary() {
   let cartSummaryHTML = "";
@@ -121,6 +122,8 @@ export function renderOrderSummary() {
       // );
 
       // container.remove();
+
+      renderCheckoutHeader();
 
       renderOrderSummary();
 
@@ -244,3 +247,5 @@ export function renderOrderSummary() {
 }
 
 // 2026.09.07 10:58
+
+// 2026.09.07 11:51
