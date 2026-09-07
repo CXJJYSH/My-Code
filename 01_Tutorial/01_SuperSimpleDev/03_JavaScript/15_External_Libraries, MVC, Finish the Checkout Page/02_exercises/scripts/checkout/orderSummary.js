@@ -116,11 +116,13 @@ export function renderOrderSummary() {
       const productId = link.dataset.productId;
       removeFromCart(productId);
 
-      const container = document.querySelector(
-        `.js-cart-item-container-${productId}`,
-      );
+      // const container = document.querySelector(
+      //   `.js-cart-item-container-${productId}`,
+      // );
 
-      container.remove();
+      // container.remove();
+
+      renderOrderSummary();
 
       updateCartQuantity();
 
@@ -240,3 +242,5 @@ export function renderOrderSummary() {
     });
   });
 }
+
+// 2026.09.07 10:58
