@@ -56,3 +56,7 @@ Most testing frameworks are similar.
 Other testing frameworks:
 Jest (for ReactJS)
 MochaJS
+
+Run tests using Jasmine
+
+Write tests using Jasmine
