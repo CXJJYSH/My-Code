@@ -74,9 +74,35 @@ Test Coverage
 
 Flaky Test = test that sometimes passes and sometimes fails
 
-Mocks
+**Mocks**
 = lets us replace a method with a fake version
 
 spyOn() records every time a method is used
 
 1 mock only lasts for 1 test
+
+How to create more complicated tests
+
+Unit Tests = testing 1 piece of the code
+
+Integration Test
+= tests many units/pieces of code working together
+
+2 things to test:
+
+1. How the page looks
+2. How the page behaves
+
+In our tests, where does the cart get displayed?
+
+Integration Test = tests many units/pieces of code working together
+
+**Hooks**
+= lets us run some code for each test
+
+**Hooks in Jasmine**
+
+beforeEach() = runs code before each test
+afterEach() = runs code after each test
+beforeAll() = runs code before all tests
+afterAll() = runs code after all tests
