@@ -1,3 +1,5 @@
+import { validDeliveryOption } from "./deliveryOptions.js";
+
 export let cart;
 
 loadFromStorage();
@@ -74,6 +76,10 @@ export function updateDeliveryOption(productId, deliveryOptionId) {
     return;
   }
 
+  if (!validDeliveryOption(deliveryOptionId)) {
+    return;
+  }
+
   matchingItem.deliveryOptionId = deliveryOptionId;
 
   saveToStorage();
@@ -84,3 +90,9 @@ export function updateDeliveryOption(productId, deliveryOptionId) {
 // 16l
 
 // 2026.09.08 19:52
+
+// 16m
+
+// 2026.09.08 20:07
+
+// 2026.09.08 20:30

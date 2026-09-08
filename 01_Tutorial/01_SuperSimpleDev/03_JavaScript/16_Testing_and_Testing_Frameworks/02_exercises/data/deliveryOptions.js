@@ -30,6 +30,18 @@ export function getDeliveryOption(deliveryOptionId) {
   return deliveryOption || deliveryOptions[0];
 }
 
+export function validDeliveryOption(deliveryOptionId) {
+  let found = false;
+
+  deliveryOptions.forEach((option) => {
+    if (option.id === deliveryOptionId) {
+      found = true;
+    }
+  });
+
+  return found;
+}
+
 function isWeekend(date) {
   const dayOfWeek = date.format("dddd");
 
@@ -58,3 +70,7 @@ export function calculateDeliveryDate(deliveryOption) {
 // Skip the weekend
 
 // 2026.09.07 14:07
+
+// 16m
+
+// 2026.09.08 20:30

@@ -1,3 +1,5 @@
+import { validDeliveryOption } from "./deliveryOptions.js";
+
 export let cart;
 
 loadFromStorage();
@@ -104,9 +106,19 @@ export function updateDeliveryOption(productId, deliveryOptionId) {
     return;
   }
 
+  if (!validDeliveryOption(deliveryOptionId)) {
+    return;
+  }
+
   matchingItem.deliveryOptionId = deliveryOptionId;
   // undefined.deliveryOptionId = deliveryOptionId会直接报错。
   // TypeError: Cannot set properties of undefined
 
   saveToStorage();
 }
+
+// 16m
+
+// 2026.09.08 20:06
+
+// 2026.09.08 20:30
