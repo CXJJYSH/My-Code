@@ -16,8 +16,17 @@ describe("test suite: formatCurrency", () => {
   it("rounds down to the nearest cent", () => {
     expect(formatCurrency(2000.4)).toEqual("20.00");
   });
+
+  it("works with negetive numbers", () => {
+    // expect(formatCurrency(-100)).toEqual("-1.00");
+    expect(formatCurrency(-500)).toEqual("-5.00");
+  });
 });
 
 // 16a
 
 // 2026.09.07 21:40
+
+// 16b
+
+// 2026.09.08 14:19
