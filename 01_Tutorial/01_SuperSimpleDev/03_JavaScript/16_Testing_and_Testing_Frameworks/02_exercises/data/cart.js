@@ -92,7 +92,7 @@ export function updateQuantity(productId, newQuantity) {
 }
 
 export function updateDeliveryOption(productId, deliveryOptionId) {
-  let matchingItem;
+  let matchingItem; // 初始值为matchingItem === undefined
 
   cart.forEach((cartItem) => {
     if (productId === cartItem.productId) {
@@ -100,7 +100,13 @@ export function updateDeliveryOption(productId, deliveryOptionId) {
     }
   });
 
+  if (!matchingItem) {
+    return;
+  }
+
   matchingItem.deliveryOptionId = deliveryOptionId;
+  // undefined.deliveryOptionId = deliveryOptionId会直接报错。
+  // TypeError: Cannot set properties of undefined
 
   saveToStorage();
 }

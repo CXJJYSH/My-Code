@@ -70,9 +70,17 @@ export function updateDeliveryOption(productId, deliveryOptionId) {
     }
   });
 
+  if (!matchingItem) {
+    return;
+  }
+
   matchingItem.deliveryOptionId = deliveryOptionId;
 
   saveToStorage();
 }
 
 // 2026.09.07 18:00
+
+// 16l
+
+// 2026.09.08 19:52
