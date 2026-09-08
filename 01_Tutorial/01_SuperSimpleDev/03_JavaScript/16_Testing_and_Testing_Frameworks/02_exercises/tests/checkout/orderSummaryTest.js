@@ -89,4 +89,28 @@ describe("test suite: renderOrderSummary", () => {
       document.querySelector(`.js-product-price-${productId2}`).innerText,
     ).toEqual("$20.95");
   });
+
+  it("updates the delivery option", () => {
+    document.querySelector(`.js-delivery-option-${productId1}-3`).click();
+
+    expect(
+      document.querySelector(`.js-delivery-option-input-${productId1}-3`)
+        .checked,
+    ).toEqual(true);
+
+    expect(cart.length).toEqual(2);
+    expect(cart[0].productId).toEqual(productId1);
+    expect(cart[0].deliveryOptionId).toEqual("3");
+
+    expect(
+      document.querySelector(".js-payment-summary-shipping").innerText,
+    ).toEqual("$9.99");
+    expect(
+      document.querySelector(".js-payment-summary-total").innerText,
+    ).toEqual("$58.01");
+  });
 });
+
+// 最后的两个价格Simon写错了吧，第一个物品选第三个快递选项的话价格应该是我写的这样才对。
+
+// 2026.09.08 17:40
