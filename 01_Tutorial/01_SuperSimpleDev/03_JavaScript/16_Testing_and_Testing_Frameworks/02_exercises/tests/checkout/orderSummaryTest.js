@@ -56,10 +56,18 @@ describe("test suite: renderOrderSummary", () => {
     expect(
       document.querySelector(`.js-product-name-${productId2}`).innerText,
     ).toEqual("Intermediate Size Basketball");
+
+    expect(
+      document.querySelector(`.js-product-price-${productId1}`).innerText,
+    ).toEqual("$10.90");
+    expect(
+      document.querySelector(`.js-product-price-${productId2}`).innerText,
+    ).toEqual("$20.95");
   });
 
   it("removes a product", () => {
     document.querySelector(`.js-delete-link-${productId1}`).click();
+
     expect(document.querySelectorAll(".js-cart-item-container").length).toEqual(
       1,
     );
@@ -69,10 +77,16 @@ describe("test suite: renderOrderSummary", () => {
     expect(
       document.querySelector(`.js-cart-item-container-${productId2}`),
     ).not.toEqual(null);
+
     expect(cart.length).toEqual(1);
     expect(cart[0].productId).toEqual(productId2);
+
     expect(
       document.querySelector(`.js-product-name-${productId2}`).innerText,
     ).toEqual("Intermediate Size Basketball"); // 这句放到两句expect前也可以。
+
+    expect(
+      document.querySelector(`.js-product-price-${productId2}`).innerText,
+    ).toEqual("$20.95");
   });
 });
