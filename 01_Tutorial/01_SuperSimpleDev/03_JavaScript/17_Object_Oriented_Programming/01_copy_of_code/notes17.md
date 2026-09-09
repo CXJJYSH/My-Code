@@ -37,3 +37,27 @@ Use PascalCase for things that generate objects
 PascalCase = start every word with a capital
 
 Create a function that generates objects
+
+**An even better way to generate objects**
+
+Class = object generator
+
+Instance
+
+**Benefits of Classes**
+
+A class looks like the object that it generates
+
+Cleaner than using a function
+
+Classes have extra features for OOP
+
+1. Constructor = lets us run setup code
+   Constructor lets us put this setup code inside the class
+
+More details about constructor:
+
+1. Has to be named "constructor
+2. Should not return anything
+
+class = better way to generate objects in object-oriented programming
