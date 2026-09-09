@@ -76,3 +76,16 @@ Same obbject as before, but an enhanced version(It has some extra features from 
 ![.map()](<./images/map().png>)
 
 **Inheritance**
+
+Inheritance = lets us reuse code between classes
+
+Parent class: Product
+Child class: Clothing
+
+When one class is a more specific type of another class, we use inheritance.
+
+Add properties and mothods that are more specific
+
+If we don't create a constructor, by default it will run the parents constructor so that's why when the child class was empty the code still worked.
+
+Method overriding, polymorphism
