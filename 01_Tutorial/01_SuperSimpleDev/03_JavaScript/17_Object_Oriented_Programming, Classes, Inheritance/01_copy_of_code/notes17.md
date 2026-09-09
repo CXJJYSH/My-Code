@@ -115,3 +115,25 @@ Method overriding, polymorphism
 1. Inside a method, "this" points to the outer object
 2. Inside a function, "this" = undefined. But we can change it.
 3. Arrow functions, do not change the value of "this".
+
+**Which style of programming should we use?**
+Object-Oriented or Procedural
+It's up to you.
+
+Simon personally prefers procedural programming in JavaScript, because he thinks it's simpler.
+Simon only uses OOP if he is working on a team that also uses it.
+
+OOP is more popular in other languages.
+So it's still useful to know.
+
+**In this lesson:**
+
+1. Object-Oriented Programming (OOP) = organize our code into objects
+2. Use a function to generate objects
+3. Classes
+4. Private properties and methods
+5. Inheritance
+6. Method Overriding & Polymorphism
+7. More details about "this"
+
+<!-- 2026.09.09 20:26 -->
