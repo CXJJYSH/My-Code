@@ -61,3 +61,7 @@ More details about constructor:
 2. Should not return anything
 
 class = better way to generate objects in object-oriented programming
+
+**Private properties and methods**
+
+Private = it can only be accessed inside the class

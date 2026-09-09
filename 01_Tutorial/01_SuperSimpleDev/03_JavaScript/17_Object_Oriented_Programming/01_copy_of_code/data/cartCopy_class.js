@@ -1,19 +1,19 @@
 import { validDeliveryOption } from "./deliveryOptions.js";
 
 class Cart {
-  cartItems;
-  localStorageKey;
+  cartItems; // Public property
+  #localStorageKey; // Private property
 
   constructor(localStorageKey) {
-    this.localStorageKey = localStorageKey;
-    this.loadFromStorage();
+    this.#localStorageKey = localStorageKey;
+    this.#loadFromStorage();
   } // **this** points to the object that we generate
 
-  loadFromStorage() {
+  #loadFromStorage() {
     // Shorthand Method Syntax
     // Regular function syntax here.
     // Not an arrow function.
-    this.cartItems = JSON.parse(localStorage.getItem(this.localStorageKey));
+    this.cartItems = JSON.parse(localStorage.getItem(this.#localStorageKey));
 
     if (!this.cartItems) {
       this.cartItems = [
@@ -32,7 +32,7 @@ class Cart {
   }
 
   saveToStorage() {
-    localStorage.setItem(this.localStorageKey, JSON.stringify(this.cartItems));
+    localStorage.setItem(this.#localStorageKey, JSON.stringify(this.cartItems));
   }
 
   addToCart(productId) {
