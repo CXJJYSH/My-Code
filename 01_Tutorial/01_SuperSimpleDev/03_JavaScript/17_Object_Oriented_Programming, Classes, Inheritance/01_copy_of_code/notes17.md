@@ -38,7 +38,7 @@ PascalCase = start every word with a capital
 
 Create a function that generates objects
 
-**An even better way to generate objects**
+**An even better way to generate objects -- Classes**
 
 Class = object generator
 
@@ -74,3 +74,5 @@ Same obbject as before, but an enhanced version(It has some extra features from 
 
 **.map()**
 ![.map()](<./images/map().png>)
+
+**Inheritance**
