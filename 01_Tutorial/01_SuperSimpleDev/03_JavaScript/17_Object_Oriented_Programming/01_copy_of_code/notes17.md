@@ -65,3 +65,12 @@ class = better way to generate objects in object-oriented programming
 **Private properties and methods**
 
 Private = it can only be accessed inside the class
+
+**Use classes in our project**
+
+Converting an object into a class
+
+Same obbject as before, but an enhanced version(It has some extra features from classes)
+
+**.map()**
+![.map()](<./images/map().png>)

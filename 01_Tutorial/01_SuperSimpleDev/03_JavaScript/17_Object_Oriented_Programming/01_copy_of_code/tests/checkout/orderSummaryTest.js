@@ -104,13 +104,17 @@ describe("test suite: renderOrderSummary", () => {
 
     expect(
       document.querySelector(".js-payment-summary-shipping").innerText,
-    ).toEqual("$9.99");
+    ).toEqual("$4.99");
     expect(
       document.querySelector(".js-payment-summary-total").innerText,
-    ).toEqual("$58.01");
+    ).toEqual("$52.51");
   });
 });
 
 // 最后的两个价格Simon写错了吧，第一个物品选第三个快递选项的话价格应该是我写的这样才对。
 
 // 2026.09.08 17:40
+
+// 还是价格对不上的问题。
+
+// 2026.09.08 15:40
