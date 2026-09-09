@@ -1,6 +1,6 @@
 import { validDeliveryOption } from "./deliveryOptions.js";
 
-function Cart() {
+function Cart(localStorageKey) {
   const cart = {
     cartItems: undefined,
 
@@ -8,7 +8,7 @@ function Cart() {
       // Shorthand Method Syntax
       // Regular function syntax here.
       // Not an arrow function.
-      this.cartItems = JSON.parse(localStorage.getItem("cart-oop"));
+      this.cartItems = JSON.parse(localStorage.getItem(localStorageKey));
 
       if (!this.cartItems) {
         this.cartItems = [
@@ -27,7 +27,7 @@ function Cart() {
     },
 
     saveToStorage() {
-      localStorage.setItem("cart-oop", JSON.stringify(this.cartItems));
+      localStorage.setItem(localStorageKey, JSON.stringify(this.cartItems));
     },
 
     addToCart(productId) {
@@ -111,8 +111,8 @@ function Cart() {
 
 // 2026.09.09 11:26
 
-const cart = Cart();
-const businessCart = Cart();
+const cart = Cart("cart-oop");
+const businessCart = Cart("cart-business");
 
 cart.loadFromStorage();
 

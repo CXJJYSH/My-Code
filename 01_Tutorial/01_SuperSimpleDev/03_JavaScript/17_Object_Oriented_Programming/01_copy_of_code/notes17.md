@@ -35,3 +35,5 @@ Using a function to create multiple objects
 Use PascalCase for things that generate objects
 
 PascalCase = start every word with a capital
+
+Create a function that generates objects
