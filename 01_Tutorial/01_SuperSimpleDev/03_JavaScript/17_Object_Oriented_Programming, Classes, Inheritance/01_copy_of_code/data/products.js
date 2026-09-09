@@ -58,6 +58,33 @@ class Clothing extends Product {
   } // Override / replace the parent's method = Method overriding
 }
 
+// const date = new Date();
+// console.log(date);
+// console.log(date.toLocaleTimeString());
+
+// console.log(this);
+// // There's no object for "this" to point to.
+// // this = undefined
+
+// const object2 = {
+//   a: 2,
+//   b: this.a,
+// }; // At this point of the code, object2 has not been created yet. this = undefined.
+
+// function logThis() {
+//   console.log(this);
+// } // Not inside of any object, so there's nothing for "this" to point to. this = undefined.
+// logThis();
+// logThis.call("hello");
+
+// this; // undefined
+// const object3 = {
+//   method: () => {
+//     console.log(this); // "this" will have the same value as outside the arrow function.
+//   },
+// };
+// object3.method();
+
 export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
