@@ -42,10 +42,12 @@ products.forEach((product) => {
         </div>
 
         ${product.extraInfoHTML()}
-        // Polymorphism = use a method without knowing the class
-        // 多态
-        // The class will determin what this method does.
-        // We don't need to change this code.
+        <!--
+        Polymorphism = use a method without knowing the class
+        多态
+        The class will determin what this method does.
+        We don't need to change this code.
+        -->
 
         <div class="product-spacer"></div>
 
