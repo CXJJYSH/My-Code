@@ -91,3 +91,35 @@ setTimeout()里依旧有callback。
 **Testing With a Backend**
 
 done() lets us control when to go to the next step.
+
+**Promises**
+
+- better way to handle asynchronous code
+- similar to done() function
+- let us wait for some asynchronous code to finish, before going to the next step
+
+When we create a promise, it is going to run this function immediately.
+
+resolve() lets us control when to go to the next step
+
+**Why do we use Promises?**
+Multple callbacks cause a lot of nesting.
+
+For example: Let's say we want to load the cart from the backend.
+
+If we have lots of callbacks, our code will become more and more nested.
+
+Promises let us flatten our code
+
+Use promises instead of callbacks.
+Promises keep our code more flat.
+
+**Features**
+
+1. We can give resolve() a parameter.
+2. We can run multiple promises at the same time.
+
+**Promises.all()**
+
+- lets us run multiple promises at the same time
+- and wait for all of them to finish
