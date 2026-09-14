@@ -3,6 +3,7 @@ import { renderOrderSummary } from "./checkout/orderSummary.js";
 import { renderPaymentSummary } from "./checkout/paymentSummary.js";
 // import "../data/cartCopy_class.js"; // Run all the code
 import "../data/car.js";
+import "../data/backend_practice.js";
 
 renderCheckoutHeader();
 renderOrderSummary();
