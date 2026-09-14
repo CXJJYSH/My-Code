@@ -77,3 +77,13 @@ Image
 
 **When we type a URL in the browser, it actually sends a GET request.**
 Using the browser = making a GET request
+
+**Use a backend in our project**
+
+**Callback**
+
+回调函数
+
+- a function to run in the future
+
+setTimeout()里依旧有callback。
