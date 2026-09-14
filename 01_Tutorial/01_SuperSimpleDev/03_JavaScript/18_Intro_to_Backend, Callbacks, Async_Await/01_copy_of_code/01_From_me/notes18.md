@@ -130,3 +130,8 @@ fetch() = better way to make HTTP requests
 fetch() uses Promises directly.
 
 response.json() is asynchronous, it returns a promise.
+
+<!-- 2026.09.14 16:51 -->
+
+**Async Await**
+= even better way to handle asynchronous code
