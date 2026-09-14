@@ -123,3 +123,10 @@ Promises keep our code more flat.
 
 - lets us run multiple promises at the same time
 - and wait for all of them to finish
+
+**fetch**
+fetch() = better way to make HTTP requests
+
+fetch() uses Promises directly.
+
+response.json() is asynchronous, it returns a promise.
