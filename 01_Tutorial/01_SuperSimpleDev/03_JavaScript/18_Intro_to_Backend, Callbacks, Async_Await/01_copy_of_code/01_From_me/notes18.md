@@ -226,3 +226,14 @@ try / catch
 localStorage
 
 **After we create an order, go to the orders page**
+
+window.location.href
+
+**track.html**
+
+URL Parameters  
+= let us save data directly in the URL
+
+URL parameters = search parameters
+
+URL parameters lets us save different data in each URL
