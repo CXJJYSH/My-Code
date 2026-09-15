@@ -7,6 +7,7 @@ describe("test suite: renderOrderSummary", () => {
   const productId2 = "15b6fc6f-327a-4ec4-896f-486349e85a3d";
 
   beforeAll((done) => {
+    // How to test asynchronous code
     loadProductsFetch().then(() => {
       done();
     });

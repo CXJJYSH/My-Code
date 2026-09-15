@@ -211,29 +211,46 @@ try / catch
 
 **We're gonna use the backend to create an order.**<br>
 
-**Get the order**
+1. **Get the order**
 
-4 types of requests
+   4 types of requests
+   - GET = get something from the backend
+     GET requests don't really let us send data to the backend.
+   - POST = create something
+   - PUT = update something
+   - DELETE = delete something
 
-- GET = get something from the backend
-  GET requests don't really let us send data to the backend.
-- POST = create something
-- PUT = update something
-- DELETE = delete something
+2. **Save the order**
 
-**Save the order**
+   localStorage
 
-localStorage
+3. **After we create an order, go to the orders page**
 
-**After we create an order, go to the orders page**
+   window.location.href
 
-window.location.href
+4. **track.html**
 
-**track.html**
+   URL Parameters  
+   = let us save data directly in the URL
 
-URL Parameters  
-= let us save data directly in the URL
+   URL parameters = search parameters
 
-URL parameters = search parameters
+   URL parameters lets us save different data in each URL
 
-URL parameters lets us save different data in each URL
+# **In this lesson:**<br>
+
+1. Backend and HTTP
+2. XMLHTTPRequest and fetch()
+3. Asynchronous code, callbacks, promises, async await
+4. How to test asynchronous code
+5. Error handling
+6. Use the backend in our project
+7. URL parameters
+
+# **What's the next step after this course?**
+
+Learn how to create our own backend.
+
+1. Command Line
+2. NodeJS = create our own backend
+3. Put a website on the internet
