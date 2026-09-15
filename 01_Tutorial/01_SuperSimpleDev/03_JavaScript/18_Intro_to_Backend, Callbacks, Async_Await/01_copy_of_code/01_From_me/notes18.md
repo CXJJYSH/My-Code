@@ -13,7 +13,7 @@ Creates a new HTTP message to send to the backen.
 
 message = request
 
-**URL**
+**URL**  
 = Uniform Resource Locator
 
 - Like an address, but for the internet.
@@ -33,7 +33,7 @@ All the HTTP messages that are comming in and out of our computer.
 Request, Response
 Request-Response Cycle = 1 request, 1 response
 
-**URL Paths**
+**URL Paths**  
 https://supersimplebackend.dev/hello
 
 - /hello
@@ -52,30 +52,30 @@ A backend only supports a certain set of URL paths
 
 If we send a request to a URL path that is not supported, the backend will respond with and error.
 
-**Status Code**
+**Status Code**  
 Starts with 4 or 5 (400, 404, 500) = failed
 Starts with 4 = Our problem
 Starts with 5 = Backend's problem
 
 Starts with 2 (200. 201. 204) = succeeded
 
-**How do we know which URL paths are supported?**
+**How do we know which URL paths are supported?**  
 Security problem
 Som backends provide a documentation page
 
-**List of URL paths**
+**List of URL paths**  
 = Backend API
 API = application programming interface
 interface = How we interact with something
 
-**The backend can respond with different types of data**
+**The backend can respond with different types of data**  
 Text
 JSON
 This allows us to send JavaScript objects across the Internet, to the backend.
 HTML
 Image
 
-**When we type a URL in the browser, it actually sends a GET request.**
+**When we type a URL in the browser, it actually sends a GET request.**  
 Using the browser = making a GET request
 
 **Use a backend in our project**
@@ -102,7 +102,7 @@ When we create a promise, it is going to run this function immediately.
 
 resolve() lets us control when to go to the next step
 
-**Why do we use Promises?**
+**Why do we use Promises?**  
 Multple callbacks cause a lot of nesting.
 
 For example: Let's say we want to load the cart from the backend.
@@ -124,7 +124,7 @@ Promises keep our code more flat.
 - lets us run multiple promises at the same time
 - and wait for all of them to finish
 
-**fetch**
+**fetch**  
 fetch() = better way to make HTTP requests
 
 fetch() uses Promises directly.
@@ -133,5 +133,41 @@ response.json() is asynchronous, it returns a promise.
 
 <!-- 2026.09.14 16:51 -->
 
-**Async Await**
+**Async Await**  
 = even better way to handle asynchronous code
+
+Async await is a shortcut for promises.
+
+async = makes a function return a promise
+
+async wraps the code in a promise
+
+async = makes a function return a promise
+
+**What's the point of this feature?**  
+= async lets us use await
+= lets us wait for a promise to finish, before going to the next line.
+
+**await**<br>
+= lets us write asynchronous code like normal code.
+
+We can only use await, when we're inside an async function.
+
+async await can only be used with promises, it doesn't do anything with a callback.
+
+We can write asynchronous code like normal code.
+
+**More details about async await**
+
+1. We can only use await, inside an async function.
+   The closest function has to be async.
+2. We can save the resolve() result into a variable.
+   ```javascript
+   const value = await new Promise((resolve) => {
+     loadCart(() => {
+       resolve("value3");
+     });
+   });
+   ```
+3. We can use await with `Promise.all` as well.
+4. Use async await over promises annd callbacks.
