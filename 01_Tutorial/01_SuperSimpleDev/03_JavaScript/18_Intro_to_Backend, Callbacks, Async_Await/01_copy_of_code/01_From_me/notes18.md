@@ -1,4 +1,4 @@
-**Backend**
+# **Backend**
 
 What is backend?
 = another computer that manages the data of a website.
@@ -78,9 +78,9 @@ Image
 **When we type a URL in the browser, it actually sends a GET request.**  
 Using the browser = making a GET request
 
-**Use a backend in our project**
+# **Use a backend in our project**
 
-**Callback**
+## **Callback**
 
 回调函数
 
@@ -92,7 +92,7 @@ setTimeout()里依旧有callback。
 
 done() lets us control when to go to the next step.
 
-**Promises**
+## **Promises**
 
 - better way to handle asynchronous code
 - similar to done() function
@@ -133,7 +133,8 @@ response.json() is asynchronous, it returns a promise.
 
 <!-- 2026.09.14 16:51 -->
 
-**Async Await**  
+## **Async Await**
+
 = even better way to handle asynchronous code
 
 Async await is a shortcut for promises.
@@ -171,3 +172,37 @@ We can write asynchronous code like normal code.
    ```
 3. We can use await with `Promise.all` as well.
 4. Use async await over promises annd callbacks.
+
+# **Error Handling**
+
+When we're sending HTTP requests, we could get unexpected errors.
+
+**Handle errors in callbacks**<br>
+
+Set up a separate callback just for errors
+
+**Handle errors in promises**<br>
+
+Use .catch() method.
+
+**Handle errors in async await**<br>
+
+try / catch
+
+**More details about try / catch**<br>
+
+1. We can use try / catch with synchronous code (or normal code)
+2. Whenever we get an error, it will skip the rest of the code.
+3. Why don't we use try / catch everywhere?<br>
+
+- it's meant to handle **unexpected** errors.(code is correct, outside our control)
+
+4. We can manually create errors.
+
+- In try / catch, we can use `throw "error1"`
+- In promises, there are 2 ways to manually create an error.
+  1. throw
+  2. If we need to create an error in the future, then we need to use different code.
+     throw does not work in the future.<br>
+     **reject() is a function**
+  - it lets us create an error in the future.
