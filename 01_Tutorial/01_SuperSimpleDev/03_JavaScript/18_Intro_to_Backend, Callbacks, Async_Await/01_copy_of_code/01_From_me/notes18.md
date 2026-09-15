@@ -206,3 +206,23 @@ try / catch
      throw does not work in the future.<br>
      **reject() is a function**
   - it lets us create an error in the future.
+
+# **Now that we learn backend, promises, and async await, let's use them in our project.**
+
+**We're gonna use the backend to create an order.**<br>
+
+**Get the order**
+
+4 types of requests
+
+- GET = get something from the backend
+  GET requests don't really let us send data to the backend.
+- POST = create something
+- PUT = update something
+- DELETE = delete something
+
+**Save the order**
+
+localStorage
+
+**After we create an order, go to the orders page**
