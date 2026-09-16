@@ -118,6 +118,16 @@ function renderProductsGrid() {
     window.location.href = `amazon.html?search=${search}`;
   });
 
+  // Extra feature: searching by pressing "Enter" on the keyboard.
+  document
+    .querySelector(".js-search-bar")
+    .addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        const searchTerm = document.querySelector(".js-search-bar").value;
+        window.location.href = `amazon.html?search=${searchTerm}`;
+      }
+    });
+
   document.querySelectorAll(".js-add-to-cart").forEach((button) => {
     // This solution uses a feature of JavaScript called a
     // closure. Each time we run the loop, it will create
