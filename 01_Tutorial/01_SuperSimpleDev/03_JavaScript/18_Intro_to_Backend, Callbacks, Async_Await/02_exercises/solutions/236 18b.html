@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <script>
+        // const xhr = new XMLHttpRequest();
+
+        // xhr.addEventListener('load', () => {
+        //     console.log(xhr.response);
+        // })
+
+        // xhr.open('GET', 'https://supersimplebackend.dev/greeting');
+        // xhr.send();
+
+        fetch(
+            'https://supersimplebackend.dev/greeting'
+        ).then((response) => {
+            return response.text();
+        }).then((text) => {
+            console.log(text);
+        })
+    </script>
+</body>
+
+</html>
+
+<!-- 2026.09.16 12:04 -->
