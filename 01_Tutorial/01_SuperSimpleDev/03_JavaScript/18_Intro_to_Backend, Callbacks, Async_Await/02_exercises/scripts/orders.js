@@ -30,7 +30,7 @@ async function loadPage() {
                     <div class="order-header-right-section">
                         <div class="order-header-label">Order ID:</div>
                         <div>${order.id}</div>
-                    <div>
+                    </div>
                 </div>
 
                 <div class="order-details-grid">
@@ -58,7 +58,7 @@ async function loadPage() {
 
                 <div class="product-delivery-date">
                     Arriving on: ${dayjs(
-                      productDetails.estimateDeliveryTime,
+                      productDetails.estimatedDeliveryTime,
                     ).format("MMMM D")}
                 </div>
 

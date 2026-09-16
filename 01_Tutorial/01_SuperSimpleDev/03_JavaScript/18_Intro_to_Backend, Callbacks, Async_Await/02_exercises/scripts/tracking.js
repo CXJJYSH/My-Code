@@ -22,9 +22,9 @@ async function loadPage() {
 
   const today = dayjs();
   const orderTime = dayjs(order.orderTime);
-  const deliveryTime = dayjs(productDetails.estimateDeliveryTime);
+  const deliveryTime = dayjs(productDetails.estimatedDeliveryTime);
   const percentProgress =
-    ((today - orderTime) / (deliveryTime - orderTime)) * 100;
+    ((today - orderTime) / (deliveryTime - orderTime)) * 100; // 这个时间应该是由dayjs内置的计算方式决定，会由较小的时间单位缓慢影响。
 
   // Extra feature: display "delivered" on the tracking page if today's date is past the delivery date.
   const deliveredMessage =

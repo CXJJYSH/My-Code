@@ -122,3 +122,27 @@ export function resetCart() {
   cart = [];
   saveToStorage();
 }
+
+export function calculateCartQuantity() {
+  let cartQuantity = 0;
+
+  cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity;
+  });
+
+  return cartQuantity;
+}
+
+export function updateQuantity(productId, newQuantity) {
+  let matchingItem;
+
+  cart.forEach((cartItem) => {
+    if (productId === cartItem.productId) {
+      matchingItem = cartItem;
+    }
+  });
+
+  matchingItem.quantity = newQuantity; // 这里不是复制出一个新的对象，而是让matchingItem指向同一个对象。
+
+  saveToStorage(); // 这个是另外编写的一个函数，不是JS内置的。
+}
