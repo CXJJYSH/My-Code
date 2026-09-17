@@ -1,4 +1,4 @@
-import { cart, resetCart } from "../../data/cartCopy.js";
+import { cart, resetCart, updateCartQuantity } from "../../data/cartCopy.js";
 import { getProduct } from "../../data/products.js";
 import { getDeliveryOption } from "../../data/deliveryOptions.js";
 import { formatCurrency } from "../utils/money.js";
@@ -91,6 +91,7 @@ export function renderPaymentSummary() {
       // Extra feature: make the cart empty after creating an order.
       resetCart();
       window.location.href = "orders.html"; // replace the things after the "/". 'orders.html' is a filepath.
+      // updateCartQuantity();
     });
 }
 

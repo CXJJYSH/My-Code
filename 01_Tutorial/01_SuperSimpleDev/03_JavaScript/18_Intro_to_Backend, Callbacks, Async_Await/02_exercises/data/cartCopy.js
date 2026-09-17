@@ -146,3 +146,9 @@ export function updateQuantity(productId, newQuantity) {
 
   saveToStorage(); // 这个是另外编写的一个函数，不是JS内置的。
 }
+
+export function updateCartQuantity() {
+  const cartQuantity = calculateCartQuantity();
+
+  document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
+}
