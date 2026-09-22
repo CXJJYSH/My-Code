@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Chatbot</title>
+</head>
+
+<body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+        function Counter({ count, setCount }) {
+            function increaseCount() {
+                setCount(count + 1);
+            }
+
+            return (
+                <button onClick={increaseCount}>
+                    Clicked {count} {count === 1 ? 'time' : 'times'}
+                </button>
+            )
+        }
+
+        function App() {
+            const [count, setCount] = React.useState(0);
+
+            return (
+                <>
+                    <Counter
+                        count={count}
+                        setCount={setCount}
+                    />
+                    <Counter
+                        count={count}
+                        setCount={setCount}
+                    />
+                </>
+            )
+        }
+
+        const container = document.querySelector('.js-container');
+        ReactDOM.createRoot(container).render(<App />);
+    </script>
+</body>
+
+</html>
+
+<!-- 用了相同名字的Naming Convention之后就不用太去考虑谁是形参谁是实参，一连串传进去就行了。 -->
+<!-- 虽然能分辨出等号后面的是实参和其它参数，但是直接同名的话要思考的东西就变少了，理解起来更自然流畅。 -->
+
+<!-- 2026.09.22 17:40 -->
