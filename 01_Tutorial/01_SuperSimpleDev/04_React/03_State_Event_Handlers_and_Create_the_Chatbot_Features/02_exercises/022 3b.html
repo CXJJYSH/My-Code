@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Chatbot</title>
+</head>
+
+<body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+        function App() {
+            const [count, setCount] = React.useState(0);
+
+            function increaseCount() {
+                setCount(count + 1);
+            }
+
+            return (
+                <button onClick={increaseCount}>
+                    Clicked {count} times
+                </button>
+            )
+        }
+
+        const container = document.querySelector('.js-container');
+        ReactDOM.createRoot(container).render(<App />);
+    </script>
+</body>
+
+</html>
+
+<!-- 用React的State更新页面是真比用DOM方便啊。 -->
+<!-- 虽然一开始感觉还是有点绕，但是比用DOM好多了，而且自己写了一遍之后感觉就好多了。 -->
+
+<!-- 2026.09.22 17:08 -->
