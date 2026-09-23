@@ -4,6 +4,86 @@
 
 <head>
     <title>Chatbot</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .send-button {
+            background-color: rgb(25, 135, 84);
+            color: white;
+            padding: 12px 20px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .chat-input {
+            padding: 12px 15px;
+            border-radius: 10px;
+            border-width: 1px;
+            font-size: 15px;
+
+            flex-grow: 1;
+        }
+
+        .chat-input-container {
+            display: flex;
+            /* flex-grow = makes an element grow and take up the remaining space */
+            margin-bottom: 60px;
+        }
+
+        .app-container {
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+
+            height: 100vh;
+            /* vh = viewport height */
+            /* (the height of the browser) */
+            /* 100vh = 100% of the height of the browser */
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-message-user {
+            display: flex;
+            justify-content: end;
+            align-items: start;
+        }
+
+        .chat-message-robot {
+            display: flex;
+            align-items: start;
+        }
+
+        .chat-message-text {
+            background-color: rgb(238, 238, 238);
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-right: 10px;
+            margin-left: 10px;
+            margin-bottom: 20px;
+            max-width: 300px;
+        }
+
+        .chat-message-profile {
+            width: 45px;
+        }
+
+        .chat-messages-container {
+            flex-grow: 1;
+            margin-top: 20px;
+            overflow: scroll;
+            /* 666，这个overflow演都不演了，直接一键滚动。 */
+            scrollbar-width: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -83,7 +163,8 @@
             }
 
             return (
-                <>
+                <div
+                    className="chat-input-container">
                     <input
                         placeholder="Send a message to Chatbot"
                         size="30"
@@ -93,10 +174,14 @@
                         // onKeyDown={(event) => event.key === "Enter" && sendMessage()}
                         onKeyDown={handleKeyDown}
                         value={inputText}
+                        className="chat-input"
                     // onChange = runs a function when we change the text inside an <input>
                     />
-                    <button onClick={sendMessage}>Send</button>
-                </>
+                    <button
+                        onClick={sendMessage}
+                        className="send-button"
+                    >Send</button>
+                </div>
             )
         }
         // JSX is more strict than normal HTML.
@@ -114,21 +199,39 @@
             // Destructuring
 
             return (
-                <div>
+                <div className={
+                    sender === 'user'
+                        ? "chat-message-user"
+                        : "chat-message-robot"
+                }>
                     {sender === 'robot' && (
-                        <img src="robot.png" width="50" />
+                        <img src="robot.png" className="chat-message-profile" />
                     )}
-                    {message}
+                    <div className="chat-message-text">
+                        {message}
+                    </div>
                     {sender === 'user' && (
-                        <img src="user.png" width="50" />
+                        <img src="user.png" className="chat-message-profile" />
                     )}
                 </div>
             )
         }
 
         function ChatMessages({ chatMessages }) {
+            const chatMessagesRef = React.useRef(null);
+
+            React.useEffect(() => {
+                const containerElem = chatMessagesRef.current;
+                if (containerElem) {
+                    containerElem.scrollTop = containerElem.scrollHeight;
+                }
+            }, [chatMessages]); // Dependency Array = control when useEffect runs
+
             return (
-                <>
+                <div
+                    className="chat-messages-container"
+                    ref={chatMessagesRef}
+                >
                     {chatMessages.map((chatMessage) => {
                         return (
                             <ChatMessage
@@ -138,7 +241,7 @@
                             />
                         )
                     })}
-                </>
+                </div>
             )
         }
 
@@ -165,15 +268,16 @@
             // const setChatMessages = array[1]; // updater function
 
             return (
-                <>
+                <div
+                    className="app-container">
+                    <ChatMessages
+                        chatMessages={chatMessages}
+                    />
                     <ChatInput
                         chatMessages={chatMessages}
                         setChatMessages={setChatMessages}
                     />
-                    <ChatMessages
-                        chatMessages={chatMessages}
-                    />
-                </>
+                </div>
             )
         }
 
