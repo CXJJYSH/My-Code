@@ -1,34 +1,31 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+// Packages
+import { useState } from "react"; // 没有/是node_modules，有/是public，./是正常路径。
+// JS
+import { ChatInput } from "./components/ChatInput";
+import { ChatMessages } from "./components/ChatMessages";
+// Other types
+import "./App.css"; // ./ = the current folder
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [chatMessages, setChatMessages] = useState([]);
+  // Array Destructuring, the order matters
+  // const chatMessages = array[0];
+  // const setChatMessages = array[1]; // updater function
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+    <div className="app-container">
+      {chatMessages.length === 0 && (
+        <p className="welcome-message">
+          Welcome to the chatbot project! Send a message using the textbox
+          below.
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      )}
+      <ChatMessages chatMessages={chatMessages} />
+      <ChatInput
+        chatMessages={chatMessages}
+        setChatMessages={setChatMessages}
+      />
+    </div>
   );
 }
 
