@@ -56,3 +56,16 @@ By default, link elements (`<a>`) reload the page.
 When using react-router, use `<Link>` instead of `<a>`.
 
 Because the `<Link>` component lets us go to another page without reloading.
+
+**In this lesson:**<br>
+
+1. Started the Ecommerce project using React and Vite
+2. Git = track changes in our code
+3. Routing = create multiple pages in React
+4. Created the HomePage, CheckoutPage, OrdersPage
+5. Updated all the links to work with routing
+6. Separated the Header into a component
+
+<!--  -->
+
+2026.09.28 18:00
