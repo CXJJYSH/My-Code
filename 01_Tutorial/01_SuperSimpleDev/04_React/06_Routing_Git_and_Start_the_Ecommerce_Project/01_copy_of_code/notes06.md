@@ -39,4 +39,20 @@ Single Page Application (SPA)
 
 = we use React to create multiple pages
 
-**Shortcuts with React Router**<br>
+**components and pages**<br>
+Components: for shared components
+
+Pages: for components that are specific for specific pages
+
+**`<Link>`**
+By default, link elements (`<a>`) reload the page.
+
+`<Link>` = go to another page without reloading
+
+```js
+<Link to="">
+```
+
+When using react-router, use `<Link>` instead of `<a>`.
+
+Because the `<Link>` component lets us go to another page without reloading.
