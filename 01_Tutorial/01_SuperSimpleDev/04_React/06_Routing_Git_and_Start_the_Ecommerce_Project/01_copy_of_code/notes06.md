@@ -12,3 +12,31 @@ Website = group of web pages
 
 **Components**<br>
 Usually, we create a component for each page of the website.
+
+**Routing**<br>
+Routing = create multiple pages in React
+
+Routing lets us create multiple pages using 1 HTML file.
+
+This lets us reuse our HTML code.
+
+Install react-router
+
+`<Route>` = tells React all the pages that are in our website
+
+To add a page to our website, we should add a component called Route.
+
+Route = a page
+
+`<Route>` = adds a page to our website
+
+element = which element or component to display
+
+**More details about Routing**<br>
+Single Page Application (SPA)
+
+= we only have 1 HTML file
+
+= we use React to create multiple pages
+
+**Shortcuts with React Router**<br>
