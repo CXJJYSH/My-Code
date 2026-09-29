@@ -32,3 +32,6 @@ response
 response.json() is also asynchronous
 
 The backend can also run on the same computer as the frontend.
+
+**axios**<br>
+axios = cleaner way to make requests to the backend
