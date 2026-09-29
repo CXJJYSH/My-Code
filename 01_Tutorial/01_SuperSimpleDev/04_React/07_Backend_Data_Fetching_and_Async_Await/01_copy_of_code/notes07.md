@@ -83,3 +83,20 @@ Backend = manage the data (do calculations)
 Frontend = present the data
 
 **Separate our code into smaller components**<br>
+
+Done.
+
+**Async Await In React**<br>
+= lets us write asynchronous code like normal code
+
+The inner function in useEffect should not return a Promise.
+
+useEffect should return nothing or a clean-up function, like this:<br>
+
+```js
+return () => {
+  window.removeEventListener("scroll");
+};
+```
+
+We need to create a new function when we use async await inside useEffect.

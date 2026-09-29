@@ -10,15 +10,32 @@ export function CheckoutPage({ cart }) {
   const [paymentSummary, setPaymentSummary] = useState(null);
 
   useEffect(() => {
-    axios
-      .get("/api/delivery-options?expand=estimatedDeliveryTime")
-      .then((response) => {
-        setDeliveryOptions(response.data);
-      });
+    // const fetchCheckoutData = async () => {
+    //   const response = await axios.get(
+    //     "/api/delivery-options?expand=estimatedDeliveryTime",
+    //   );
+    //   setDeliveryOptions(response.data);
+    // };
+    // fetchCheckoutData();
+    // const fetchPaymentData = async () => {
+    //   const response = await axios.get("/api/payment-summary");
+    //   setPaymentSummary(response.data);
+    // };
+    // fetchPaymentData();
+    // 上面的是我写的，我写了两个分开的。
+    // 下面的是Simon写的，他把两个合并了，复用了一个变量，所以要把该变量用let声明。
 
-    axios.get("/api/payment-summary").then((response) => {
+    const fetchCheckoutData = async () => {
+      let response = await axios.get(
+        "/api/delivery-options?expand=estimatedDeliveryTime",
+      );
+      setDeliveryOptions(response.data);
+
+      response = await axios.get("/api/payment-summary");
       setPaymentSummary(response.data);
-    });
+    };
+
+    fetchCheckoutData();
   }, []);
 
   return (
