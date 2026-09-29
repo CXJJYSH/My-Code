@@ -100,3 +100,16 @@ return () => {
 ```
 
 We need to create a new function when we use async await inside useEffect.
+
+**Next Lesson: Data Mutation**<br>
+= update data in the backend
+
+**In this lesson:**<br>
+
+1. Backend = manages the data
+2. Set up a backend for our project
+3. Data Fetching
+4. axios = easier way to make requests to the backend
+5. Generate the HTML using data from the backend
+6. Separated into smaller components
+7. Async Await = write asynchronous code like normal code
