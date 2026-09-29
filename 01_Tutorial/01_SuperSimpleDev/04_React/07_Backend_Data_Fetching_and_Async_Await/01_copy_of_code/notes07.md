@@ -81,3 +81,5 @@ Backend does this thing.
 
 Backend = manage the data (do calculations)
 Frontend = present the data
+
+**Generate**
