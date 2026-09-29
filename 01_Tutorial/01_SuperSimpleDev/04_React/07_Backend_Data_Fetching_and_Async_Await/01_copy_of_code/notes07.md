@@ -78,3 +78,6 @@ Use it again.
 Query Parameter = lets us add additional info to our request
 
 Backend does this thing.
+
+Backend = manage the data (do calculations)
+Frontend = present the data
