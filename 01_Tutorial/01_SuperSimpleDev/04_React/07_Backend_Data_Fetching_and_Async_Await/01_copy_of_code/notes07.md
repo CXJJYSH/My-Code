@@ -70,3 +70,11 @@ In index.html, `<base href="/" />` adds a "/" in front of any relative URLs.
 For example, it can help us convert `images/products/shirt.png` to `/images/products/shirt.png`
 
 **Lifting the State Up**<br>
+Use it again.
+
+**Query Parameter**<br>
+`/api/cart-items?expand=product`
+
+Query Parameter = lets us add additional info to our request
+
+Backend does this thing.
