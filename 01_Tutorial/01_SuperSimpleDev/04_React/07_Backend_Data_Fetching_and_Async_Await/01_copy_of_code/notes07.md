@@ -35,3 +35,15 @@ The backend can also run on the same computer as the frontend.
 
 **axios**<br>
 axios = cleaner way to make requests to the backend
+
+Dependency Array = lets us control when useEffect runs
+
+[] = only run once
+
+**StrictMode**<br>
+StrictMode runs useEffect() twice to help us catch bugs, and it only does this during development.
+
+**Updater function**<br>
+
+- lets us update the value
+- regenerate the HTML
