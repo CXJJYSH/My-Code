@@ -47,3 +47,19 @@ StrictMode runs useEffect() twice to help us catch bugs, and it only does this d
 
 - lets us update the value
 - regenerate the HTML
+
+**URL Path**<br>
+Whoever creates the backend decides what the URL Paths will be.
+
+**API**<br>
+API = Application Programming Interface
+
+/api = these URL Paths are for interacting with the backend
+
+**Older ESLint problems**<br>
+
+```js
+rules: {
+'react/prop-types': 'off'
+}
+```
