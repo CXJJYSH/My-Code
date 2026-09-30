@@ -29,7 +29,7 @@ export function OrderDetailsGrid({ order }) {
             </div>
 
             <div className="product-actions">
-              <Link to="/tracking">
+              <Link to={`/tracking/${order.id}/${orderProduct.product.id}`}>
                 <button className="track-package-button button-secondary">
                   Track package
                 </button>
@@ -41,3 +41,5 @@ export function OrderDetailsGrid({ order }) {
     </div>
   );
 }
+
+// <Link to={`/tracking/${order.id}/${orderProduct.product.id}`}> 的order.id和orderProduct.product.id是遵循后端给的响应中的对象结构写的。
