@@ -12,7 +12,7 @@ export function OrdersPage({ cart }) {
 
   useEffect(() => {
     const fetchOrdersData = async () => {
-      const response = axios.get("/api/orders?expand=products");
+      const response = await axios.get("/api/orders?expand=products");
       setOrders(response.data);
     };
 
@@ -23,7 +23,7 @@ export function OrdersPage({ cart }) {
     <>
       <title>Orders</title>
 
-      <link rel="icon" type="image/svg+xml" to="orders-favicon.png" />
+      <link rel="icon" type="image/svg+xml" href="orders-favicon.png" />
 
       <Header cart={cart} />
 
