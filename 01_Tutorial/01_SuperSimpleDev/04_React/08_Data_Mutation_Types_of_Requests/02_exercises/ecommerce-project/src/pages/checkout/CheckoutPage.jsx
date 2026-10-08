@@ -9,6 +9,7 @@ export function CheckoutPage({ cart, loadCart }) {
   const [deliveryOptions, setDeliveryOptions] = useState([]);
   const [paymentSummary, setPaymentSummary] = useState(null);
 
+  // This useEffect will only run once.
   useEffect(() => {
     // const fetchCheckoutData = async () => {
     //   const response = await axios.get(
@@ -26,16 +27,23 @@ export function CheckoutPage({ cart, loadCart }) {
     // 下面的是Simon写的，他把两个合并了，复用了一个变量，所以要把该变量用let声明。
 
     const fetchCheckoutData = async () => {
-      let response = await axios.get(
+      const response = await axios.get(
         "/api/delivery-options?expand=estimatedDeliveryTime",
       );
       setDeliveryOptions(response.data);
-
-      response = await axios.get("/api/payment-summary");
-      setPaymentSummary(response.data);
     };
 
     fetchCheckoutData();
+  }, []);
+
+  // 哎呀我去，上面我本来就已经分开写了，这个地方自己做主处理得很好。
+  useEffect(() => {
+    const fetchPaymentSummary = async () => {
+      const response = await axios.get("/api/payment-summary");
+      setPaymentSummary(response.data);
+    };
+
+    fetchPaymentSummary();
   }, [cart]);
 
   return (
