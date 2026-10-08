@@ -55,3 +55,16 @@ Both of these determine what the backend will do.
 
 **useNavigate**<br>
 Lets us navigate to (go to) another page in our app.
+
+**Next Lesson**<br>
+Automated Tests in React
+
+**In this lesson:**<br>
+
+1. Data Mutation = update data in the backend
+2. Types of requests: GET, POST, PUT DELETE
+3. POST request: add products to the cart, create an order
+4. PUT request: update the cart
+5. DELETE request: delete a product from the cart
+6. Dependency Array to update the payment summary
+7. useNavigate = navigate to another page using our code
