@@ -52,3 +52,6 @@ Both of these determine what the backend will do.
 
 **Dependency Array**<br>
 `[value]` = whenever value changes, it will re-run useEffect
+
+**useNavigate**<br>
+Lets us navigate to (go to) another page in our app.
