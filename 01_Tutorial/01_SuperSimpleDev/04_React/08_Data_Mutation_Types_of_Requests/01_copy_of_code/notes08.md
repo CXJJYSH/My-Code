@@ -68,3 +68,12 @@ Automated Tests in React
 5. DELETE request: delete a product from the cart
 6. Dependency Array to update the payment summary
 7. useNavigate = navigate to another page using our code
+
+**useEffect**<br>
+Values from outside of useEffect should be in dependency array.
+
+这是传参的作用？warning说里面本来没有search。
+
+在HomePage.jsx的search中出现。
+
+2026.10.08 18:13
