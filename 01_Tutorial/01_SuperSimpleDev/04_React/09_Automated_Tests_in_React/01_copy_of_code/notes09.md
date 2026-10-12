@@ -67,3 +67,15 @@ NPM packages for automated testing:<br>
    MemoryRouter = specifically for testing
 
    within() = lets us find things within a specific element
+
+**Next Lesson: Deploying**<br>
+
+**In this lesson:**<br>
+
+1. Automated tests with Vitest
+2. Unit test = test 1 piece of the code
+3. it(), expect(), describe()
+4. Integration tests = test multiple pieces of code
+5. Test a commponent (using render and screen)
+6. Mock = fake version of a function / package
+7. Mock the implementation = make a mock do whatever we want
