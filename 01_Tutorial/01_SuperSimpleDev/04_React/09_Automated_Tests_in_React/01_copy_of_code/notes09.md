@@ -52,3 +52,9 @@ NPM packages for automated testing:<br>
    `vi.fn()` = creates a fake function that doesn't do anything (mock).
 
    screen = check the fake web page
+
+3. Test User Interactions
+   @testing-library/user-event lets us simulate events (like clicking a button)
+
+   Test that our code runs `axios.post`.<br>
+   Test if we gave `axios.post` the correct values.<br>
