@@ -58,3 +58,12 @@ NPM packages for automated testing:<br>
 
    Test that our code runs `axios.post`.<br>
    Test if we gave `axios.post` the correct values.<br>
+
+4. Mock the Implementation
+   = make the mock do whatever we want
+
+   For `<Link>` components to work, they need to be inside a Router.
+
+   MemoryRouter = specifically for testing
+
+   within() = lets us find things within a specific element
