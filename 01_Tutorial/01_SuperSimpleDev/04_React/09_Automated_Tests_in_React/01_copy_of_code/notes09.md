@@ -14,10 +14,41 @@ NPM packages for automated testing:<br>
 
 **Type**<br>
 
-1. Unit Test = test 1 unit (or 1 piece) of the code
+1. Unit Test (for example, utils)
+   = test 1 unit (or 1 piece) of the code
 
-it = create a test
+   it = create a test
 
-describe = groups tests together
+   describe = groups tests together
 
-group of tests = test suite
+   group of tests = test suite
+
+2. Integration Test (for example, components)
+   = test multiple units of code working together
+
+   Testing a function: `expect(formatMoney(1999)).toBe('$19.99');`
+
+   Testing a component: `render(<Product />);`
+
+   render = display the component on the page
+
+   I need to install some other npm packages to create an integration test.
+
+   the command: `npm install --save-dev @testing-library/react@16.3.0 @testing-library/jest-dom@6.6.3 @testing-library/user-event@14.6.1 jsdom@26.1.0`
+
+   jest-dom adds methods to expect()
+
+   ```js
+   expect().toBeInTheDocument();
+   expect().toHaveAttribute();
+   expect().toHaveTextContent();
+   ```
+
+   In our tests, we should not contact a real backend.
+   Because the backend might not be available during tests.
+
+   Mock = create a fake version of this function
+
+   `vi.fn()` = creates a fake function that doesn't do anything (mock).
+
+   screen = check the fake web page
