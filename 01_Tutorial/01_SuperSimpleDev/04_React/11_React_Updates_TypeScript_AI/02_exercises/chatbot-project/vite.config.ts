@@ -14,5 +14,5 @@ export default defineConfig({
   // The value should be '/' + your repository name. For example:
   // if you named your repository "my-repo" the config should be
   // base: '/my-repo'
-  base: "/chatbot-project",
+  base: "/Chatbot-Project",
 });
