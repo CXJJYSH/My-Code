@@ -75,3 +75,13 @@ Github Copilot
 5. Converted ecommerce project to TypeScript
 6. Intro to TypeScript with React
 7. Intro to AI with React
+
+**Next Step after React**<br>
+Simon recommends starting learning the backend.
+
+1. Command Line
+2. NodeJS
+
+<!--  -->
+
+2026.10.13 23:30
