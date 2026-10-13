@@ -44,3 +44,5 @@ TypeScript gives us type checking.
 
 **Type Inference**<br>
 TypeScript can figure out the type automatically.
+
+**Convert an Existing Project to TypeScript**<br>
