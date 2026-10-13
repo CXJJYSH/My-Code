@@ -22,6 +22,14 @@ export function ChatInput({ chatMessages, setChatMessages }: ChatInputProps) {
   const [inputText, setInputText] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  // 这里可以手动声明：
+  /*
+    event: {
+      target: {
+        value: string;
+      };
+    }
+  */
   function saveInputText(event: ChangeEvent<HTMLInputElement>) {
     setInputText(event.target.value);
     // event.target = gives us the element that we're typing in
