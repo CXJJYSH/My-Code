@@ -1,0 +1,7 @@
+.chat-messages-container {
+    flex-grow: 1;
+    margin-top: 20px;
+    overflow: scroll;
+    /* 666，这个overflow演都不演了，直接一键滚动。 */
+    scrollbar-width: none;
+}
