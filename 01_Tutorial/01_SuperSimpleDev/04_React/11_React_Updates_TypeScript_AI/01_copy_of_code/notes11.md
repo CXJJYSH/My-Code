@@ -55,3 +55,23 @@ This whole thing is the parameter.
 
 **Type Alias**<br>
 works like a variable, but for types.
+
+**AI with React**<br>
+Github Copilot
+
+1. Autocomplete  
+   When using AI, we may need to go in and modify things.
+2. We can give the AI instructions
+3. We still need to understand the code.  
+   -It's important to learn hwo to code first.  
+   -And then use AI to code faster.
+
+**In this lesson:**<br>
+
+1. Updates in the new version of React
+2. React Compiler = automatically optimize our React code
+3. Set up TypeScript React project using create-vite
+4. Intro to TypeScript (type checking, type inference)
+5. Converted ecommerce project to TypeScript
+6. Intro to TypeScript with React
+7. Intro to AI with React
