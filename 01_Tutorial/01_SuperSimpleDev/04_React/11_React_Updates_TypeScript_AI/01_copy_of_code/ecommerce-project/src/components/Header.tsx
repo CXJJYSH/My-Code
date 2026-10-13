@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { ChangeEvent, KeyboardEvent } from "react";
 import { NavLink, useNavigate, useSearchParams } from "react-router";
 import CartIcon from "../assets/images/icons/cart-icon.png";
 import SearchIcon from "../assets/images/icons/search-icon.png";
@@ -6,7 +7,15 @@ import LogoWhite from "../assets/images/logo-white.png";
 import MobileLogoWhite from "../assets/images/mobile-logo-white.png";
 import "./Header.css";
 
-export function Header({ cart }) {
+type HeaderProps = {
+  cart: {
+    productId: string;
+    quantity: number;
+    deliveryOptionId: string;
+  }[];
+};
+
+export function Header({ cart }: HeaderProps) {
   // Shortcut for
   // export function Header(props) {
   //   const cart = props.cart;
@@ -23,7 +32,7 @@ export function Header({ cart }) {
   // It means if searchText does not exist it will use a default value of ''.
   const [search, setSearch] = useState(searchText || "");
 
-  const updateSearchInput = (event) => {
+  const updateSearchInput = (event: ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
   };
 
@@ -31,7 +40,7 @@ export function Header({ cart }) {
     navigate(`/?search=${search}`);
   };
 
-  const handleSearchKeyDown = (event) => {
+  const handleSearchKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
     const keyPressed = event.key;
 
     if (keyPressed === "Enter") {

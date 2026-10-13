@@ -46,3 +46,12 @@ TypeScript gives us type checking.
 TypeScript can figure out the type automatically.
 
 **Convert an Existing Project to TypeScript**<br>
+Drag files and modify files.
+
+**Intro to TypeScript with React**<br>
+Destructuring shortcut: `{cart}`
+This whole thing is the parameter.
+`{}[]` = array of objects
+
+**Type Alias**<br>
+works like a variable, but for types.
