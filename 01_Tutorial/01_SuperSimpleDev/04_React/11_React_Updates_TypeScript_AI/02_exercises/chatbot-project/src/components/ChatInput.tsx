@@ -1,15 +1,33 @@
 import dayjs from "dayjs";
 import { useState } from "react";
+import type { ChangeEvent, KeyboardEvent } from "react";
 import { Chatbot } from "supersimpledev";
 import LoadingImage from "../assets/loading-spinner.gif";
 import "./ChatInput.css";
 
+type ChatInputProps = {
+  chatMessages: {
+    id: string;
+    message: string | React.ReactNode;
+    sender: string;
+    time?: number;
+  }[];
+  setChatMessages: (
+    chatMessages: {
+      id: string;
+      message: string | React.ReactNode;
+      sender: string;
+      time?: number;
+    }[],
+  ) => void;
+};
+
 // In React, the component name must start with a capital letter.
-export function ChatInput({ chatMessages, setChatMessages }) {
+export function ChatInput({ chatMessages, setChatMessages }: ChatInputProps) {
   const [inputText, setInputText] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  function saveInputText(event) {
+  function saveInputText(event: ChangeEvent<HTMLInputElement>) {
     setInputText(event.target.value);
     // event.target = gives us the element that we're typing in
   }
@@ -62,7 +80,7 @@ export function ChatInput({ chatMessages, setChatMessages }) {
     setIsLoading(false);
   }
 
-  function handleKeyDown(event) {
+  function handleKeyDown(event: KeyboardEvent<HTMLInputElement>) {
     if (event.key === "Enter") {
       sendMessage();
     }
@@ -88,7 +106,7 @@ export function ChatInput({ chatMessages, setChatMessages }) {
     <div className="chat-input-container">
       <input
         placeholder="Send a message to Chatbot"
-        size="30"
+        size={30}
         onChange={saveInputText}
         // onKeyDown={event.key === "Enter" && sendMessage}
         // 上面这样写不行，下面这样写可以。Simon创建了一个新函数，我也和他一样吧。
