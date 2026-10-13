@@ -5,21 +5,16 @@ import { Chatbot } from "supersimpledev";
 import LoadingImage from "../assets/loading-spinner.gif";
 import "./ChatInput.css";
 
+type ChatMessages = {
+  id: string;
+  message: string | React.ReactNode;
+  sender: string;
+  time?: number;
+}[];
+
 type ChatInputProps = {
-  chatMessages: {
-    id: string;
-    message: string | React.ReactNode;
-    sender: string;
-    time?: number;
-  }[];
-  setChatMessages: (
-    chatMessages: {
-      id: string;
-      message: string | React.ReactNode;
-      sender: string;
-      time?: number;
-    }[],
-  ) => void;
+  chatMessages: ChatMessages;
+  setChatMessages: (chatMessages: ChatMessages) => void;
 };
 
 // In React, the component name must start with a capital letter.
