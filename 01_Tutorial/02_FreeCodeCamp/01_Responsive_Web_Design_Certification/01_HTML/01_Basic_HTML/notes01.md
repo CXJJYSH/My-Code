@@ -11,3 +11,7 @@
 虽然许多代码格式化工具如 Prettier 会选择在空元素中包含 /，但 HTML 规格声明 / 的存在“并不表示开始标签是自闭合的，而是多余的且没有任何效果”。
 
 在实际开发中，你会看到这两种形式，因此熟悉它们都很重要。
+
+# div
+
+You will mainly use the div element when you want to group HTML elements that will share a set of CSS styles.
