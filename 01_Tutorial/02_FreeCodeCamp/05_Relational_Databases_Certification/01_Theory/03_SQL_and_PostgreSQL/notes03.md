@@ -421,7 +421,8 @@ Sometimes, you might need to query data based on a specific condition. For examp
 
 ```sql
 SELECT *
-FROM dogsWHERE age < 3;
+FROM dogs
+WHERE age < 3;
 ```
 
 The result will only include dogs whose age is less than 3:
@@ -451,3 +452,342 @@ And here's the result:
 These are common and simple ways to insert and view data in SQL, but there are many different options that you can choose from and some of them are more advanced. You'll learn about them in coming lessons.
 
 2026.10.20 17:35
+
+## What Are Primary and Foreign Keys in SQL, and How Do They Work?
+
+### What Is a Primary Key?
+
+Let's start with primary keys.
+
+A primary key is a column or set of columns that uniquely identifies each record (row) in a table. This constraint ensures that no records in the table will have the same value for the primary key.
+
+This is why a table can only have one primary key.
+
+Values in the primary key column can't be NULL either, so they will always have a valid value.
+
+In PostgreSQL, to make a column the primary key of your table, you just need to add PRIMARY KEY after the data type:
+
+```sql
+column_name data_type PRIMARY KEY
+
+```
+
+This is an example of a students table:
+
+```sql
+CREATE TABLE students (
+  student_id SERIAL PRIMARY KEY,
+  name VARCHAR(100));
+
+```
+
+Each student will have its own student_id, and this ID will be the primary key of the table. The SERIAL type is useful here because it ensures the student_id will always have a unique value.
+
+A composite primary key is for when a table doesn't have a single unique column to identify the row. In this case, you can use a combination of two or more columns as the primary key that, together, are unique.
+
+To do this, denote which columns are the composite primary key when you create the table like this:
+
+```sql
+CREATE TABLE table_name (
+  column1 data_type column_constraint,
+  column2 data_type column_constraint,
+  column3 data_type column_constraint,
+  ...
+  PRIMARY KEY (column1, column2));
+
+```
+
+Imagine you have a table with student_id and course_id columns that tells you what students are enrolled in various classes.
+
+Each student will be enrolled in several classes, and each class will have several students enrolled in it. So neither column is unique - but you will never have the same student enrolled in the same class more than once. So you can use the combination of the two columns as the primary key:
+
+```sql
+CREATE TABLE course_enrollments (
+  student_id INT,
+  course_id INT,
+  ...
+  PRIMARY KEY (student_id, course_id),);
+
+```
+
+Primary keys are essential for ensuring data uniqueness and integrity, for optimizing data retrieval, and for establishing relationships with other tables in a relational database.
+
+### What Is a Foreign Key?
+
+That takes us to the next type of key that we will cover in this lesson: foreign keys.
+
+A foreign key is a column (or set of columns) in a table that references the primary key of another table. A table can have multiple foreign keys.
+
+In this example, we have two tables, customers, and orders:
+
+```sql
+CREATE TABLE customers (
+  customer_id SERIAL PRIMARY KEY,
+  first_name VARCHAR(100) NOT NULL,
+  ...
+);
+
+CREATE TABLE orders (
+  order_id SERIAL PRIMARY KEY,
+  customer_id INTEGER,
+  ...
+  FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
+
+```
+
+The primary key of the customers table is customer_id and the primary key of the orders table is order_id.
+
+But notice that there is also a customer_id column in the orders table.
+
+Why are we storing customer information in the orders table?
+
+We do this to create a relationship between the customers and orders tables. Each order will store the ID of the customer who submitted it.
+
+To create the relationship between the tables, we will make the customer_id column in the orders table a foreign key that references the customer_id column in the customers table:
+
+```sql
+FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+
+```
+
+Values in a foreign key column must either match the primary key values in the referenced table or be NULL (if the foreign key allows NULLs).
+
+Why is this helpful?
+
+By making sure that these columns in both tables match exactly, foreign and primary keys prevent the creation of "orphaned" records, records that refer to a non-existent record in another table.
+
+### Why Primary Keys and Foreign Keys Matter
+
+Primary and foreign keys are fundamental for relational databases. They power the "relational" aspect of these databases, allowing you to model real-world data in an accurate way.
+
+## What Are the Different Types of Relationships in a Relational Database?
+
+### The Main Types of Relationships
+
+The "relational" aspect of "relational databases" comes from the fact that records in different tables can have different types of relationships.
+
+There are five main types of relations:
+
+- one-to-one
+- one-to-many
+- many-to-one
+- many-to-many
+- And self-referencing relationships (also known as recursive relationships).
+
+### One-to-One Relationships
+
+Two tables have a one-to-one relationship when each record in the first table can be associated with at most one record in the second table, and vice versa.
+
+For example, let's say a company only assigns one vehicle per employee.
+
+In that case, the database could have an employees table and a vehicles table, where each employee record corresponds to one, and only one, vehicle record in the database.
+
+### One-to-Many and Many-to-One Relationships
+
+In contrast, one-to-many relationships occur when one record in a table can be related to one or more records in another table.
+
+For example, if we have a customers table and an orders table, each customer could be related to one or more orders but each order can only be related to one customer.
+
+This is the same as the many-to-one relation, but from the opposite perspective. One or more orders can be related to one customer.
+
+### Many-to-Many Relationships
+
+Many-to-many relationships occur when a record in a table can be related to multiple records in another table and vice versa.
+
+For example, let's analyze a database for a library. For simplicity purposes, let's assume that this database only has two tables: books and authors.
+
+An author can write multiple books, and a single book can be written by multiple authors.
+
+Implementing this type of relationship is a little bit more complex because the relational model at its core doesn't support many-to-many relationships directly.
+
+To handle this, you would usually create an intermediate table, also known as a junction table.
+
+This table solves these initial limitations by transforming the many-to-many relationship into two one-to-many relationships.
+
+It creates a one-to-many relationship between the first table and the junction table and a one-to-many relationship between the second table and the junction table.
+
+The name of the junction table is usually a combination of the entities. In the context of our example of books and authors, you may call it books_authors.
+
+In the junction table itself, you would associate the authors and their books by creating two columns: a column for the author's id (author_id) and another column for the book's id (book_id).
+
+These would be foreign keys referencing their corresponding primary keys in the authors and books tables, respectively.
+
+With this junction table, you'll be able to query all the authors of a given book or all books written by a given author.
+
+Using a junction table makes it easier to query the data, prevents redundancy, and simplifies the database schema. They are very helpful for implementing many-to-many relationships.
+
+### Self-Referencing Relationships
+
+And finally, we find self-referencing relationships, which occur when the records of a table can be related to other records on the same table. This is also known as a recursive relationship.
+
+Understanding these relationships is essential for designing and modeling complex and efficient relational databases.
+
+## What Are the Different Ways to Join Tables?
+
+### Why SQL's JOIN Matters
+
+Even though relational databases organize data into separate tables, SQL's JOIN operations allow you to combine related information from tables to query data.
+
+### Different Variants of the JOIN Operation
+
+There are several variants of the JOIN operation, including:
+
+- INNER JOIN
+- FULL OUTER JOIN
+- LEFT OUTER JOIN
+- RIGHT OUTER JOIN
+- SELF JOIN
+- CROSS JOIN
+
+### The INNER JOIN Operation
+
+An INNER JOIN filters the result to include only rows where the values in the joining columns that you specify are equal in both tables. Basically, it gives you the intersection of the data.
+
+### The FULL OUTER JOIN Operation
+
+If a match is found in the specified columns, the data is combined and you get all columns for each matching record.
+
+If there's no match in the specified columns, in either one of the tables, the missing columns are filled with NULL values.
+
+如果在指定的列中找到匹配，数据将被合并，你将获得每个匹配记录的所有列。
+
+如果在任一表格的指定列中没有匹配，则缺失的列将填充为 NULL 值。
+
+### LEFT OUTER JOIN Operation
+
+A LEFT OUTER JOIN is used to get all the records from the left table and the matching information from the right table for each row of the left table.
+
+If no match is found, the columns from the right table are filled in with NULL values.
+
+LEFT OUTER JOIN 用于获取左表的所有记录以及左表每一行对应的右表匹配信息。
+
+如果未找到匹配，则右表的列将填充为 NULL 值。
+
+### The RIGHT OUTER JOIN Operation
+
+A RIGHT OUTER JOIN is very similar, but now we get all the records from the right table and the matching information from the left table for each row of the right table.
+
+If there's no match, the columns from the left table are filled in with NULL values.
+
+### The SELF JOIN Operation
+
+A SELF JOIN allows you to join the table with itself. You can think of it as joining two copies of the same table. This is helpful for comparing different rows within the same table.
+
+SELF JOIN 允许你将表格与其自身连接。你可以将其视为连接同一表格的两个副本。这对于比较同一表格中的不同行非常有用。
+
+### The CROSS JOIN Operation
+
+A CROSS JOIN, also known as a Cartesian Join, joins every row from the first table with every row of the second table. Therefore, it generates all possible row combinations. This operation doesn't need any conditions to join the tables.
+
+CROSS JOIN，也称为笛卡尔连接，将第一个表格的每一行与第二个表格的每一行连接。因此，它生成所有可能的行组合。此操作不需要任何条件来连接表格。
+
+### Why Use JOIN Operations
+
+These JOIN operations are fundamental for working with SQL. By choosing the right one, you can query the data you need as efficiently as possible.
+
+### Examples for SELF JOIN operation and CROSS JOIN operation
+
+#### 1. SELF JOIN（自连接）
+
+**例子：查询每个员工及其直属上级的姓名。**
+
+假设有一张 `employees` 表：
+
+| employee_id | name | manager_id |
+| ----------: | ---- | ---------: |
+|           1 | 张三 |       NULL |
+|           2 | 李四 |          1 |
+|           3 | 王五 |          1 |
+|           4 | 赵六 |          2 |
+
+其中，`manager_id` 表示直属上级的员工编号。
+
+SQL：
+
+    SELECT
+        e.name AS employee,
+        m.name AS manager
+    FROM employees AS e
+    LEFT JOIN employees AS m
+        ON e.manager_id = m.employee_id;
+
+查询结果：
+
+| employee | manager |
+| -------- | ------- |
+| 张三     | NULL    |
+| 李四     | 张三    |
+| 王五     | 张三    |
+| 赵六     | 李四    |
+
+**原理：** 将同一张 `employees` 表当作两张表使用：
+
+- `e`：员工表
+- `m`：上级表
+
+通过 `e.manager_id = m.employee_id`，找到每个员工对应的上级。
+
+SELF JOIN 的典型用途就是查询同一张表中记录之间的关系，例如员工与上级、商品与其替代商品等。
+
+#### 2. CROSS JOIN（交叉连接）
+
+**例子：查询所有颜色和所有尺码的组合。**
+
+假设有两张表：
+
+`colors`
+
+| color |
+| ----- |
+| 红色  |
+| 蓝色  |
+
+`sizes`
+
+| size |
+| ---- |
+| S    |
+| M    |
+| L    |
+
+SQL：
+
+    SELECT
+        colors.color,
+        sizes.size
+    FROM colors
+    CROSS JOIN sizes;
+
+查询结果：
+
+| color | size |
+| ----- | ---- |
+| 红色  | S    |
+| 红色  | M    |
+| 红色  | L    |
+| 蓝色  | S    |
+| 蓝色  | M    |
+| 蓝色  | L    |
+
+**原理：** 将第一张表的每一行与第二张表的每一行进行组合。
+
+如果第一张表有 2 行，第二张表有 3 行，那么结果就有：
+
+$$
+2 \times 3 = 6 \text{ 行}
+$$
+
+CROSS JOIN 的典型用途是生成所有可能的组合，例如商品颜色与尺码的搭配。
+
+---
+
+**核心区别：**
+
+| 对比             | SELF JOIN          | CROSS JOIN               |
+| ---------------- | ------------------ | ------------------------ |
+| 含义             | 同一张表与自身连接 | 两张表进行交叉组合       |
+| 是否需要连接条件 | 通常需要           | 不需要                   |
+| 结果             | 取决于连接条件     | 每行与另一张表的每行组合 |
+
+2026.10.21 18:14
