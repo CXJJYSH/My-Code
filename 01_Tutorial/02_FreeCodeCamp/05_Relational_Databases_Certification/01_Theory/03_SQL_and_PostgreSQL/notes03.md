@@ -791,3 +791,13 @@ CROSS JOIN 的典型用途是生成所有可能的组合，例如商品颜色与
 | 结果             | 取决于连接条件     | 每行与另一张表的每行组合 |
 
 2026.10.21 18:14
+
+# Build a Database of Video Game Characters
+
+```sql
+SELECT * FROM character_actions
+FULL JOIN characters ON character_actions.character_id=characters.character_id
+FULL JOIN actions ON character_actions.action_id=actions.action_id;
+```
+
+2026.10.22 16:46
