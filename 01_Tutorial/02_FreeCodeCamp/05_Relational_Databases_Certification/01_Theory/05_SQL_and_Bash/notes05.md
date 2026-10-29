@@ -25,3 +25,5 @@ FROM orders
 JOIN customers ON orders.customer_id = customers.customer_id
 WHERE orders.order_id IN (SELECT order_id FROM orders LIMIT 50)
 ```
+
+SELECT a1, a2 WHERE a2 != 'foobar' ORDER BY a1 LIMIT 10
