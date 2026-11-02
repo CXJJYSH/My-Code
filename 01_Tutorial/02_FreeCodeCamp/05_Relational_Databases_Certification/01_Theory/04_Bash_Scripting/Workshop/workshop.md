@@ -31,7 +31,3 @@ bash is hashed (/usr/bin/bash)
 psql is /usr/bin/psql
 
 ./five.sh is ./five.sh
-
-2026.10.26 17:23
-
-IFS = Internal Field Separator
