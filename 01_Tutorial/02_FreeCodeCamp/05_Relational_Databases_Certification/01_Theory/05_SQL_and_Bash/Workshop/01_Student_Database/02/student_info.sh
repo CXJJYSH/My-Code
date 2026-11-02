@@ -36,4 +36,12 @@ echo "$($PSQL "SELECT DISTINCT(course) FROM students RIGHT JOIN majors USING(maj
 echo -e "\nList of courses, in alphabetical order, with only one student enrolled:"
 echo "$($PSQL "SELECT course FROM students RIGHT JOIN majors USING(major_id) INNER JOIN majors_courses USING(major_id) INNER JOIN courses USING(course_id) GROUP BY course HAVING COUNT(student_id) = 1 ORDER BY course")"
 
+# 最后这句不用WHERE而是用GROUP和HAVING的原因：
+# https://chatgpt.com/c/6ae83635-b674-83ea-a28d-d4285c25bf04
+# 前面没问题，我会写。
+# 后面的GROUP其实就是分组，然后数个数，COUNT(student_id)就是说明在数个数。
+# 最后选啥就用啥排序就行了。
+
 # 2026.11.02 15:04
+
+# 2026.11.02 15:08
