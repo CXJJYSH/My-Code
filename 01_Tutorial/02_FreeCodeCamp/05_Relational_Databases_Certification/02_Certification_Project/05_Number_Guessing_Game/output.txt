@@ -1,0 +1,65 @@
+Enter your username:
+a
+Welcome back, a! You have played 0 games, and your best game took  guesses.
+816
+Guess the secret number between 1 and 1000:
+816
+You guessed it in 1 tries. The secret number was 816. Nice job!
+6
+1
+camper: /number_guessing_game$ ./number_guess.sh
+Enter your username:
+a
+Welcome back, a! You have played 1 games, and your best game took 1 guesses.
+615
+Guess the secret number between 1 and 1000:
+615
+You guessed it in 1 tries. The secret number was 615. Nice job!
+6
+1
+
+camper: /number_guessing_game$ ./number_guess.sh
+Enter your username:
+a
+Welcome back, a! You have played 2 games, and your best game took 1 guesses.
+Guess the secret number between 1 and 1000:
+That is not an integer, guess again:
+^C
+
+camper: /number_guessing_game$ ./number_guess.sh
+Enter your username:
+a
+Welcome back, a! You have played 2 games, and your best game took 1 guesses.
+Guess the secret number between 1 and 1000:
+That is not an integer, guess again:
+^C
+
+camper: /number_guessing_game$ ./number_guess.sh
+Enter your username:
+A
+Welcome, A! It looks like this is your first time here.
+Guess the secret number between 1 and 1000:
+500
+It's lower than that, guess again:
+250
+It's lower than that, guess again:
+125
+It's higher than that, guess again:
+150
+It's higher than that, guess again:
+200
+It's higher than that, guess again:
+225
+It's higher than that, guess again:
+240
+It's lower than that, guess again:
+230
+It's higher than that, guess again:
+235
+It's lower than that, guess again:
+234
+It's lower than that, guess again:
+233
+You guessed it in 11 tries. The secret number was 233. Nice job!
+
+2026.11.26 12:59
